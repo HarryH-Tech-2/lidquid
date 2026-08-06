@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- sun-yellow sticker tile, echoing the Lidquid logo mark -->
+  <rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#ffb703" stroke="#1c1a17" stroke-width="2.5"/>
+  <!-- mini QR glyph in ink -->
+  <g fill="#1c1a17">
+    <!-- top-left finder -->
+    <path d="M7 7h6v6H7z M9 9h2v2H9z" fill-rule="evenodd"/>
+    <!-- top-right finder -->
+    <path d="M19 7h6v6h-6z M21 9h2v2h-2z" fill-rule="evenodd"/>
+    <!-- bottom-left finder -->
+    <path d="M7 19h6v6H7z M9 21h2v2H9z" fill-rule="evenodd"/>
+    <!-- scattered modules -->
+    <rect x="19" y="19" width="2" height="2"/>
+    <rect x="23" y="19" width="2" height="2"/>
+    <rect x="21" y="21" width="2" height="2"/>
+    <rect x="19" y="23" width="2" height="2"/>
+    <rect x="23" y="23" width="2" height="2"/>
+    <rect x="15" y="9" width="2" height="2"/>
+    <rect x="15" y="13" width="2" height="2"/>
+    <rect x="9" y="15" width="2" height="2"/>
+    <rect x="13" y="15" width="2" height="2"/>
+    <rect x="15" y="21" width="2" height="2"/>
+  </g>
+</svg>
