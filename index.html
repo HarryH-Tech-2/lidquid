@@ -347,6 +347,43 @@
   @keyframes fillIn { from { width: 0; } }
   @keyframes shimmer { to { background-position: -32px 0; } }
 
+  /* ── social band ── */
+  .social {
+    position: relative;
+    margin: 52px auto 0;
+    max-width: 560px;
+    background: #fffdf8;
+    border: 3px solid var(--ink);
+    border-radius: 22px;
+    padding: 30px 26px 28px;
+    box-shadow: 6px 7px 0 var(--ink);
+    transform: rotate(-1deg);
+  }
+  .social .kicker { margin-bottom: 16px; }
+  .social h2 {
+    font-weight: 900;
+    font-size: clamp(24px, 4.5vw, 34px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .social h2 .mark { background: linear-gradient(transparent 58%, var(--teal) 58% 88%, transparent 88%); padding: 0 2px; color: var(--ink); }
+  .social p { margin: 14px auto 0; font-size: 16px; color: #4c473f; max-width: 44ch; }
+  .social p b { color: var(--ink); }
+  .social-chips { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+  .social-chips .chip {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 16px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 6px 15px;
+    transition: transform .18s cubic-bezier(.34,1.56,.64,1);
+  }
+  .social-chips .chip:nth-child(1) { transform: rotate(-2deg); }
+  .social-chips .chip:nth-child(2) { transform: rotate(1.5deg); }
+  .social-chips .chip:nth-child(3) { transform: rotate(-1deg); }
+  .social-chips .chip:hover { transform: rotate(0deg) scale(1.08); }
+
   .props { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 44px; }
   .prop {
     background: #fffdf8;
@@ -440,6 +477,17 @@
       <div class="spots">
         <div class="bar"><div class="fill"></div></div>
         31 of 50 pilot spots claimed
+      </div>
+    </div>
+
+    <div class="social rise d6">
+      <div class="kicker"><span class="pulse"></span> the part nobody expects</div>
+      <h2>Your lid doesn't just earn — <span class="mark">it introduces you.</span></h2>
+      <p>Every scan is someone leaning over to say <i>"wait, what <b>is</b> that?"</i> Quiet café regulars turn into people you actually know — the freelancer two tables over, the barista, the stranger who becomes a coffee mate. <b>It's a tiny billboard that also happens to break the ice.</b></p>
+      <div class="social-chips">
+        <span class="chip">☕ meet fellow regulars</span>
+        <span class="chip">💬 an instant conversation starter</span>
+        <span class="chip">🤝 your café, but social</span>
       </div>
     </div>
 
