@@ -24,6 +24,21 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="any" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2.5' y='2.5' width='27' height='27' rx='7' fill='%23ffb703' stroke='%231c1a17' stroke-width='2.5'/%3E%3Cg fill='%231c1a17'%3E%3Cpath d='M7 7h6v6H7z M9 9h2v2H9z' fill-rule='evenodd'/%3E%3Cpath d='M19 7h6v6h-6z M21 9h2v2h-2z' fill-rule='evenodd'/%3E%3Cpath d='M7 19h6v6H7z M9 21h2v2H9z' fill-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E">
 <meta name="theme-color" content="#ffb703">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much can I actually earn?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on where your laptop lives. Each brand sets a rate per verified scan, and a lid that sits in a busy café five days a week earns far more than one that stays home. Real pilot numbers will be published once the first city has run." } },
+    { "@type": "Question", "name": "Will the sticker wreck my laptop?", "acceptedAnswer": { "@type": "Answer", "text": "No. Lidquid uses removable vinyl designed for laptop lids. It peels off clean and leaves zero residue." } },
+    { "@type": "Question", "name": "Do I get a say in which brand goes on my lid?", "acceptedAnswer": { "@type": "Answer", "text": "You approve every brand before anything ships. You see the design, the brand, and the rate — and you can say no for any reason." } },
+    { "@type": "Question", "name": "What counts as a verified scan?", "acceptedAnswer": { "@type": "Answer", "text": "A real person, on a real phone, scanning your QR for the first time. Repeat scans from the same device and bots don't count." } },
+    { "@type": "Question", "name": "When does my city open?", "acceptedAnswer": { "@type": "Answer", "text": "Cities open in order of waitlist demand — joining the list is the vote. Pilot spots go to the top of the list first." } },
+    { "@type": "Question", "name": "Do I have to do anything once the sticker's on?", "acceptedAnswer": { "@type": "Answer", "text": "No. No posting, no follower count, no promoting. You work from your café like you already do." } },
+    { "@type": "Question", "name": "What if I want out?", "acceptedAnswer": { "@type": "Answer", "text": "Peel it off. Done. No lock-in, no minimum term, no fees. You keep everything you've earned." } }
+  ]
+}
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Archivo:wght@500;600;700;900&display=swap');
 
@@ -445,6 +460,57 @@
   .prop:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 4px 6px 0 #1c1a1730; }
   .prop span { margin-right: 6px; }
 
+  /* ── FAQ ── */
+  .faq { margin: 56px auto 0; max-width: 680px; text-align: left; }
+  .faq-head { text-align: center; margin-bottom: 22px; }
+  .faq-head h2 {
+    font-weight: 900;
+    font-size: clamp(24px, 4.5vw, 32px);
+    letter-spacing: -0.02em;
+  }
+  .faq-head .hand { font-size: 18px; color: #8a8378; margin-top: 6px; display: block; }
+  .faq details {
+    background: #fffdf8;
+    border: 2.5px solid var(--ink);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    box-shadow: 4px 4px 0 #1c1a1725;
+    transition: box-shadow .18s ease, transform .18s ease;
+    overflow: hidden;
+  }
+  .faq details:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 #1c1a1735; }
+  .faq details[open] { box-shadow: 5px 5px 0 var(--ink); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 15.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    user-select: none;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    font-family: 'Gochi Hand', cursive;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--coral);
+    flex-shrink: 0;
+    transition: transform .25s cubic-bezier(.34,1.56,.64,1);
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq .a {
+    padding: 0 20px 18px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #4c473f;
+  }
+  .faq .a b { color: var(--ink); }
+
   footer { border-top: 2px dashed #d8d0c2; padding: 22px; text-align: center; font-size: 12.5px; color: #8a8378; }
   footer .hand { color: var(--teal); }
 
@@ -549,6 +615,48 @@
       <div class="prop"><span>✅</span>You approve every brand</div>
       <div class="prop"><span>📈</span>Earn per verified scan</div>
       <div class="prop"><span>📍</span>Best for café &amp; coworking regulars</div>
+    </div>
+
+    <div class="faq rise d6">
+      <div class="faq-head">
+        <h2>Fair questions.</h2>
+        <span class="hand">the stuff everyone asks before joining</span>
+      </div>
+
+      <details>
+        <summary>How much can I actually earn?</summary>
+        <div class="a">It depends on where your laptop lives. Each brand sets a rate per verified scan, and a lid that sits in a busy café five days a week earns far more than one that stays home. <b>We'll publish real pilot numbers once the first city has run</b> — no made-up projections.</div>
+      </details>
+
+      <details>
+        <summary>Will the sticker wreck my laptop?</summary>
+        <div class="a">No. We use <b>removable vinyl designed for laptop lids</b> — the same class of material as premium decals. It peels off clean, leaves zero residue, and doesn't care about your stickers-underneath situation because it goes on top of bare lid only.</div>
+      </details>
+
+      <details>
+        <summary>Do I get a say in which brand goes on my lid?</summary>
+        <div class="a"><b>You approve every brand before anything ships.</b> You see the design, the brand, and the rate — and you can say no for any reason, or swap out at the end of a campaign. It's your lid; we're just the agent.</div>
+      </details>
+
+      <details>
+        <summary>What counts as a "verified scan"?</summary>
+        <div class="a">A real person, on a real phone, scanning your QR for the first time. Repeat scans from the same device, bots, and — sorry — <b>you scanning it yourself in a mirror</b> don't count. Verification is how brands trust the numbers enough to pay properly.</div>
+      </details>
+
+      <details>
+        <summary>When does my city open?</summary>
+        <div class="a">Cities open <b>in order of waitlist demand</b> — joining the list literally is the vote. When your city crosses the threshold, everyone there gets one email, and pilot spots go to the top of the list first.</div>
+      </details>
+
+      <details>
+        <summary>Do I have to do anything once the sticker's on?</summary>
+        <div class="a">That's the whole point — <b>no.</b> No posting, no follower count, no promoting. You work from your café like you already do; curiosity does the rest. The only thing you might have to do is answer "wait, what is that?" from the table next to you.</div>
+      </details>
+
+      <details>
+        <summary>What if I want out?</summary>
+        <div class="a">Peel it off. Done. <b>No lock-in, no minimum term, no fees.</b> You keep everything you've earned up to that day.</div>
+      </details>
     </div>
   </div>
 </main>
