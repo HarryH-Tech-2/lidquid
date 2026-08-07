@@ -531,6 +531,9 @@ window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
   r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
 pintrk('load', '2613515361163');
 pintrk('page');
+pintrk('track', 'pagevisit', {
+  event_id: 'pv-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8)
+});
 </script>
 <noscript>
 <img height="1" width="1" style="display:none;" alt=""
@@ -840,7 +843,10 @@ pintrk('page');
       btn.textContent = "You're in ✓";
       if (window.pintrk) {
         pintrk('load', '2613515361163', { em: email });
-        pintrk('track', 'signup', { lead_type: 'waitlist' });
+        pintrk('track', 'signup', {
+          event_id: 'su-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
+          lead_type: 'waitlist'
+        });
       }
       burstConfetti();
     } catch (err) {
