@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X94FLTZWM8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X94FLTZWM8');
+</script>
+
 <title>Lidquid — Rent out the side of your laptop you never see.</title>
 <meta name="description" content="Lidquid rents the back of your laptop to brands. Strangers scan, you earn. Join the pilot waitlist.">
 
@@ -108,16 +119,16 @@
 
   .topbar { display: flex; justify-content: center; padding: 26px 24px 0; }
   .logo {
-    font-weight: 900; font-size: 24px; letter-spacing: -0.03em;
-    display: flex; align-items: center; gap: 10px;
+    font-weight: 900; font-size: 42px; letter-spacing: -0.03em;
+    display: flex; align-items: center; gap: 14px;
   }
   .logo .dot {
-    width: 30px; height: 30px;
+    width: 50px; height: 50px;
     background: var(--sun);
     border: 3px solid var(--ink);
-    border-radius: 9px;
+    border-radius: 13px;
     display: grid; place-items: center;
-    font-size: 14px;
+    font-size: 22px;
     transform: rotate(-6deg);
     box-shadow: 2px 2px 0 var(--ink);
     transition: transform .3s cubic-bezier(.34,1.56,.64,1);
@@ -193,113 +204,179 @@
   .lede { margin: 20px auto 0; font-size: 18px; color: #4c473f; max-width: 58ch; }
   .lede b { color: var(--ink); }
 
-  /* ── interactive sticker ── */
-  .sticker-stage { perspective: 900px; display: inline-block; margin: 36px auto 10px; }
-  .sticker {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
+  /* ── how it works ── */
+  .how {
+    margin: 64px 0 0;
+    /* break out of the 780px column: up to 1000px wide, always centered */
+    width: min(1800px, calc(100vw - 48px));
+    margin-left: calc(50% - min(900px, 50vw - 24px));
+  }
+  .how-head { text-align: center; margin-bottom: 26px; }
+  .how-head h2 {
+    font-weight: 900;
+    font-size: clamp(26px, 4.8vw, 38px);
+    letter-spacing: -0.02em;
+  }
+  .how-head .hand { font-size: 20px; color: #8a8378; margin-top: 6px; display: block; }
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
     text-align: left;
+  }
+  .step {
+    position: relative;
+    background: #fffdf8;
+    border: 2.5px solid var(--ink);
+    border-radius: 30px;
+    padding: 60px 30px 44px;
+    box-shadow: 8px 8px 0 #1c1a1725;
+    transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease;
+  }
+  .step:nth-child(odd) { transform: rotate(-1deg); }
+  .step:nth-child(even) { transform: rotate(1deg); }
+  .step:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 5px 7px 0 var(--ink); }
+  .step .num {
+    position: absolute; top: -30px; left: 30px;
+    width: 64px; height: 64px;
+    background: var(--sun);
+    border: 2.5px solid var(--ink);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 34px; line-height: 1;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .step .ico { font-size: 54px; line-height: 1; display: block; margin-bottom: 22px; }
+  .step h3 { font-weight: 800; font-size: 26px; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.1; }
+  .step p { font-size: 18.5px; line-height: 1.5; color: #4c473f; }
+  .step p b { color: var(--ink); }
+  .step:nth-child(2) .num { background: var(--coral); color: #fff; }
+  .step:nth-child(3) .num { background: var(--teal); color: #fff; }
+  .how-foot { font-family: 'Gochi Hand', cursive; font-size: 19px; color: var(--teal); margin-top: 24px; margin-bottom: 36px; text-align: center; }
+  @media (max-width: 1100px) {
+    .step { padding: 52px 24px 36px; }
+    .step .ico { font-size: 46px; }
+    .step h3 { font-size: 22px; }
+    .step p { font-size: 16.5px; }
+  }
+  @media (max-width: 860px) {
+    .how-steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .how-steps { grid-template-columns: 1fr; gap: 30px; }
+    .step:nth-child(odd), .step:nth-child(even) { transform: rotate(0); }
+  }
+
+  /* ── in-the-wild showcase ── */
+  .wild { margin: 40px auto 0; max-width: 780px; }
+  /* ── center-mode carousel: 1:1 slides, neighbors peeking, edges fading out ── */
+  .carousel {
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;   /* full-bleed: the strip spans the whole viewport */
+    width: 100vw;
+    padding: 0 56px;      /* side breathing room so the arrows never sit on the edge */
+    box-sizing: border-box;
+  }
+  .car-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 8px calc(50% - 400px);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+  .car-track::-webkit-scrollbar { display: none; }
+  .car-slide {
+    flex: 0 0 800px;
+    width: 800px;
+    height: 800px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  .car-slide.portrait, .car-slide.portrait img { width: 536px; }
+  .car-slide.portrait { flex-basis: 536px; }
+  .car-slide img {
+    display: block;
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
     background: #fffdf8;
     border: 3px solid var(--ink);
     border-radius: 18px;
-    padding: 16px 22px;
-    box-shadow: 6px 7px 0 var(--ink);
-    transform: rotate(-1.5deg);
-    transition: transform .15s ease, box-shadow .15s ease;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
+    box-shadow: 5px 6px 0 #1c1a1730;
   }
-  .sticker:active { transform: rotate(-1.5deg) scale(.97); box-shadow: 3px 4px 0 var(--ink); }
-  .qr-fake {
-    width: 62px; height: 62px; flex-shrink: 0;
-    border: 2.5px solid var(--ink); border-radius: 9px;
-    background:
-      conic-gradient(var(--ink) 25%, transparent 0 50%, var(--ink) 0 75%, transparent 0) 0 0 / 15px 15px,
-      #fff;
+  @media (max-width: 980px) {
+    .car-track { padding: 8px calc(50% - 310px); }
+    .car-slide, .car-slide img { width: 620px; height: 620px; }
+    .car-slide { flex: 0 0 620px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 416px; }
+    .car-slide.portrait { flex-basis: 416px; }
   }
-  .sticker .txt { font-family: 'Gochi Hand', cursive; font-size: 21px; line-height: 1.15; }
-  .sticker .txt em { font-style: normal; background: linear-gradient(transparent 55%, #ffb70366 55%); }
-  .sticker .txt small { display: block; font-size: 14px; color: var(--teal); margin-top: 3px; }
-
-  .try-hint {
-    font-family: 'Gochi Hand', cursive;
-    font-size: 16px;
-    color: #8a8378;
-    margin-bottom: 26px;
-    animation: nudge 2.5s ease-in-out infinite;
+  @media (max-width: 760px) {
+    .car-track { padding: 8px calc(50% - 230px); }
+    .car-slide, .car-slide img { width: 460px; height: 460px; }
+    .car-slide { flex: 0 0 460px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 308px; }
+    .car-slide.portrait { flex-basis: 308px; }
   }
-  @keyframes nudge { 0%,100% { translate: 0 0; } 50% { translate: 0 -3px; } }
-
-  /* floating +£ chips */
-  .earn-chip {
-    position: fixed;
+  @media (max-width: 560px) {
+    .car-track { padding: 8px calc(50% - 165px); }
+    .car-slide, .car-slide img { width: 330px; height: 330px; }
+    .car-slide { flex: 0 0 330px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 221px; }
+    .car-slide.portrait { flex-basis: 221px; }
+  }
+  @media (max-width: 400px) {
+    .car-track { padding: 8px calc(50% - 130px); }
+    .car-slide, .car-slide img { width: 260px; height: 260px; }
+    .car-slide { flex: 0 0 260px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 174px; }
+    .car-slide.portrait { flex-basis: 174px; }
+  }
+  .car-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+    background: var(--sun);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 28px;
     font-weight: 900;
-    font-family: 'Archivo', sans-serif;
-    font-size: 20px;
-    color: var(--teal);
-    text-shadow: 0 1px 0 #fff;
-    pointer-events: none;
-    z-index: 50;
-    animation: floatUp 1.1s ease-out forwards;
-  }
-  @keyframes floatUp {
-    from { opacity: 1; translate: 0 0; scale: .8; }
-    30% { scale: 1.15; }
-    to { opacity: 0; translate: 0 -70px; scale: 1; }
-  }
-
-  /* demo earnings counter */
-  .demo-earn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 999px;
-    padding: 8px 20px;
-    font-weight: 800;
-    font-size: 15px;
-    margin-bottom: 34px;
+    display: grid; place-items: center;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #1c1a1750;
     transition: transform .15s cubic-bezier(.34,1.56,.64,1);
   }
-  .demo-earn.pop { transform: scale(1.12); }
-  .demo-earn b { color: var(--sun); font-size: 18px; min-width: 62px; text-align: left; }
-
-  /* ── in-the-wild showcase ── */
-  .wild { margin: 40px auto 0; max-width: 620px; }
-  .photo-frame {
-    position: relative;
-    display: inline-block;
-    background: #fffdf8;
-    border: 3px solid var(--ink);
-    border-radius: 20px;
-    padding: 12px 12px 14px;
-    box-shadow: 7px 8px 0 var(--ink);
-    transform: rotate(-1.5deg);
-    transition: transform .25s cubic-bezier(.34,1.56,.64,1);
-    max-width: 100%;
+  .car-btn:hover { transform: translateY(-50%) scale(1.12); }
+  .car-btn:active { transform: translateY(-50%) scale(.95); }
+  .car-btn.prev { left: 18px; }
+  .car-btn.next { right: 18px; }
+  @media (max-width: 560px) {
+    .carousel { padding: 0 28px; }
+    .car-btn { width: 48px; height: 48px; font-size: 22px; }
+    .car-btn.prev { left: 8px; }
+    .car-btn.next { right: 8px; }
   }
-  .photo-frame:hover { transform: rotate(0deg) scale(1.01); }
-  .photo-frame img {
-    display: block;
-    width: 100%;
-    max-width: 460px;
-    height: auto;              /* keep the photo's real aspect ratio — never stretch */
-    aspect-ratio: 920 / 1150;
-    object-fit: contain;
-    border-radius: 12px;
+  .car-dots { display: flex; justify-content: center; gap: 9px; margin-top: 16px; }
+  .car-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
     border: 2px solid var(--ink);
+    background: #fff;
+    padding: 0;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s cubic-bezier(.34,1.56,.64,1);
   }
-  .photo-tape {
-    position: absolute;
-    top: -13px; left: 50%;
-    width: 92px; height: 26px;
-    transform: translateX(-50%) rotate(-2.5deg);
-    background: #ffb70366;
-    border: 1.5px dashed #1c1a1740;
-  }
+  .car-dot.on { background: var(--sun); transform: scale(1.25); }
   .photo-cap {
     font-family: 'Gochi Hand', cursive;
     font-size: 17px;
@@ -319,8 +396,9 @@
   }
 
   /* ── form ── */
-  .waitlist { max-width: 560px; margin: 0 auto; }
-  .field-row { display: flex; gap: 10px; }
+  .waitlist { max-width: 560px; margin: 28px auto 0; }
+  .field-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .field-row button.cta { flex: 0 0 100%; width: 100%; }
   @media (max-width: 520px) { .field-row { flex-direction: column; } }
   .field-row input {
     flex: 1;
@@ -399,16 +477,6 @@
   }
   .share-row button:hover { transform: translateY(-1px); }
 
-  .spots { margin-top: 34px; display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 600; color: #55504a; }
-  .bar { width: 150px; height: 12px; border: 2px solid var(--ink); border-radius: 999px; background: #fff; overflow: hidden; }
-  .bar .fill {
-    height: 100%; width: 62%;
-    background: repeating-linear-gradient(45deg, var(--sun) 0 8px, #f3a600 8px 16px);
-    background-size: 200% 100%;
-    animation: fillIn 1.2s ease-out, shimmer 3s linear infinite;
-  }
-  @keyframes fillIn { from { width: 0; } }
-  @keyframes shimmer { to { background-position: -32px 0; } }
 
   /* ── social band ── */
   .social {
@@ -504,6 +572,7 @@
     transition: transform .25s cubic-bezier(.34,1.56,.64,1);
   }
   .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details.animating { will-change: height; }
   .faq .a {
     padding: 0 20px 18px;
     font-size: 14.5px;
@@ -552,7 +621,7 @@ pintrk('track', 'pagevisit', {
 
 <div class="marquee">
   <div class="marquee-track" id="marqueeTrack">
-    <span>💷 your lid is <b>ad space</b></span><span>👀 strangers scan out of <b>curiosity</b></span><span>💸 you earn <b>per verified scan</b></span><span>🎨 removable vinyl, <b>zero residue</b></span><span>✅ you approve <b>every brand</b></span><span>📍 built for <b>café regulars</b></span>
+    <span>💵 your lid is <b>ad space</b></span><span>👀 strangers scan out of <b>curiosity</b></span><span>💸 you earn <b>per verified scan</b></span><span>🎨 removable vinyl, <b>zero residue</b></span><span>✅ you approve <b>every brand</b></span><span>📍 built for <b>café regulars</b></span>
   </div>
 </div>
 
@@ -563,7 +632,7 @@ pintrk('track', 'pagevisit', {
 <main>
   <div class="card">
     <div class="hero">
-      <div class="doodle a">£ per scan</div>
+      <div class="doodle a">$ per scan</div>
       <div class="doodle b">comes off clean</div>
       <div class="doodle c">you pick the brand</div>
 
@@ -590,38 +659,67 @@ pintrk('track', 'pagevisit', {
           </div>
         </div>
 
-        <div class="spots">
-          <div class="bar"><div class="fill"></div></div>
-          31 of 50 pilot spots claimed
-        </div>
       </div>
     </div>
 
-    <div class="sticker-stage rise d4">
-      <div class="sticker" id="sticker" title="Try scanning it">
-        <div class="qr-fake"></div>
-        <div class="txt">
-          I get paid <em>every time</em> you scan this.
-          <small>← this goes on your lid</small>
+    <div class="how rise d4">
+      <div class="how-head">
+        <h2>How it works.</h2>
+        <span class="hand">four steps — none of them involve effort</span>
+      </div>
+      <div class="how-steps">
+        <div class="step">
+          <span class="num">1</span>
+          <span class="ico">📮</span>
+          <h3>Join the waitlist</h3>
+          <p>Drop your email and city. <b>Cities open in order of demand</b> — joining the list is the vote.</p>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <span class="ico">✅</span>
+          <h3>Approve a brand</h3>
+          <p>When your city opens we show you the brand, the design and the rate per scan. <b>Say yes — or no, for any reason.</b></p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <span class="ico">💻</span>
+          <h3>Stick it on your lid</h3>
+          <p>A removable vinyl sticker lands in your post. Peel, stick, and <b>go to your café like you already do.</b></p>
+        </div>
+        <div class="step">
+          <span class="num">4</span>
+          <span class="ico">💸</span>
+          <h3>Earn per verified scan</h3>
+          <p>Strangers scan out of curiosity; every real first-time scan pays you. <b>Want out? Peel it off.</b> Keep what you've earned.</p>
         </div>
       </div>
+      <div class="how-foot">no posting, no followers, no promoting — curiosity does the work ✌️</div>
     </div>
-    <div class="try-hint rise d4">↑ go on, tap the sticker</div>
-
-    <div class="demo-earn rise d4" id="demoEarn">demo earnings <b id="earnTotal">£0.00</b></div>
 
     <div class="wild rise d5">
-      <div class="photo-frame">
-        <div class="photo-tape"></div>
-        <img src="assets/sticker-in-the-wild.webp" alt="A Lidquid sticker on the back of a laptop in a café — a stranger scanning its QR code with their phone." loading="lazy" decoding="async" width="920" height="1150">
+      <div class="carousel">
+        <button class="car-btn prev" id="carPrev" aria-label="Previous image">←</button>
+        <button class="car-btn next" id="carNext" aria-label="Next image">→</button>
+        <div class="car-track" id="carTrack" aria-label="Lidquid in the wild — image carousel">
+          <div class="car-slide">
+            <img src="assets/wild-cafe-scan.jpg?v=sq2" alt="A Lidquid sticker on the back of a laptop in a café — a stranger scanning its QR code with their phone." decoding="async" width="920" height="920">
+          </div>
+          <div class="car-slide portrait">
+            <img src="assets/wild-coffee-money.jpg?v=sq3" alt="This is how I earn coffee money — a phone scanning the Lidquid QR sticker on a laptop lid in a café." loading="lazy" decoding="async" width="1073" height="1600">
+          </div>
+          <div class="car-slide">
+            <img src="assets/wild-ad-space.jpg?v=sq3" alt="Poster reading 'your lid is ad space' with the Lidquid QR sticker on a laptop lid and lidquid.com." loading="lazy" decoding="async" width="1600" height="1600">
+          </div>
+        </div>
       </div>
-      <div class="photo-cap">↑ spotted in the wild — a café regular earning while they sip ☕</div>
+      <div class="car-dots" id="carDots"></div>
+      <div class="photo-cap" id="carCap">↑ spotted in the wild — a café regular earning while they sip ☕</div>
       <div class="custom-note"><span>🎨</span> Make it yours — customise the wording, colours &amp; QR frame to match your vibe</div>
     </div>
 
     <div class="social rise d6">
       <div class="kicker"><span class="pulse"></span> the part nobody expects</div>
-      <h2>Your lid doesn't just earn — it introduces you.</h2>
+      <h2>Your lid doesn't just earn.</h2>
       <p>Every scan is someone leaning over to say <i>"wait, what <b>is</b> that?"</i> Quiet café regulars turn into people you actually know — the freelancer two tables over, the barista, the stranger who becomes a coffee mate. <b>It's a tiny billboard that also happens to break the ice.</b></p>
       <div class="social-chips">
         <span class="chip">☕ meet fellow regulars</span>
@@ -690,47 +788,79 @@ pintrk('track', 'pagevisit', {
   const track = document.getElementById('marqueeTrack');
   track.innerHTML += track.innerHTML;
 
-  // ── 3D tilt on the sticker ──
-  const stage = document.querySelector('.sticker-stage');
-  const sticker = document.getElementById('sticker');
-  stage.addEventListener('mousemove', e => {
-    const r = stage.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    sticker.style.transform = `rotate(-1.5deg) rotateY(${x * 16}deg) rotateX(${y * -14}deg)`;
+  // ── in-the-wild carousel ──
+  const carTrack = document.getElementById('carTrack');
+  const carDots = document.getElementById('carDots');
+  const carCap = document.getElementById('carCap');
+  const carCaptions = [
+    "↑ spotted in the wild — a café regular earning while they sip ☕",
+    "↑ this is how I earn coffee money ☕",
+    "↑ the whole idea, one poster"
+  ];
+  const slideCount = carTrack.children.length;
+
+  // clone the full set on both sides so the strip can cycle forever
+  const carReal = [...carTrack.children];
+  carReal.forEach(s => {
+    const c = s.cloneNode(true);
+    c.dataset.clone = "1";
+    c.querySelector('img').loading = "lazy";
+    carTrack.appendChild(c);
   });
-  stage.addEventListener('mouseleave', () => {
-    sticker.style.transform = 'rotate(-1.5deg)';
+  [...carReal].reverse().forEach(s => {
+    const c = s.cloneNode(true);
+    c.dataset.clone = "1";
+    c.querySelector('img').loading = "lazy";
+    carTrack.prepend(c);
   });
+  const carSlides = [...carTrack.children];   // 3n slides; real set lives at n..2n-1
 
-  // ── click-to-earn demo ──
-  let total = 0;
-  const earnTotal = document.getElementById('earnTotal');
-  const demoEarn = document.getElementById('demoEarn');
-  const lines = ["+£0.60", "+£0.60", "+£0.60", "cha-ching!", "+£0.60"];
-  let scanCount = 0;
+  for (let i = 0; i < slideCount; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'car-dot' + (i === 0 ? ' on' : '');
+    dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+    dot.addEventListener('click', () => carGoTo(slideCount + i));
+    carDots.appendChild(dot);
+  }
 
-  sticker.addEventListener('click', e => {
-    total += 0.6;
-    scanCount++;
-    earnTotal.textContent = '£' + total.toFixed(2);
+  function slideLeft(i) {
+    const s = carSlides[i];
+    return s.offsetLeft + s.offsetWidth / 2 - carTrack.clientWidth / 2;
+  }
+  function carIndex() {   // raw index across the 3n strip
+    const center = carTrack.scrollLeft + carTrack.clientWidth / 2;
+    let best = 0, bestDist = Infinity;
+    carSlides.forEach((s, i) => {
+      const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - center);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
+  function carGoTo(i) {
+    carTrack.scrollTo({ left: slideLeft(i), behavior: 'smooth' });
+  }
+  document.getElementById('carPrev').addEventListener('click', () => carGoTo(carIndex() - 1));
+  document.getElementById('carNext').addEventListener('click', () => carGoTo(carIndex() + 1));
 
-    demoEarn.classList.remove('pop');
-    void demoEarn.offsetWidth;
-    demoEarn.classList.add('pop');
+  // start in the middle (real) copy without animating
+  requestAnimationFrame(() => carTrack.scrollTo({ left: slideLeft(slideCount), behavior: 'instant' }));
 
-    const chip = document.createElement('div');
-    chip.className = 'earn-chip';
-    chip.textContent = lines[Math.min(scanCount - 1, 4) % 5] === "cha-ching!" && scanCount === 4 ? "cha-ching!" : "+£0.60";
-    chip.style.left = (e.clientX - 20 + (Math.random() * 24 - 12)) + 'px';
-    chip.style.top = (e.clientY - 30) + 'px';
-    document.body.appendChild(chip);
-    setTimeout(() => chip.remove(), 1100);
-
-    if (scanCount === 8) {
-      const hint = document.querySelector('.try-hint');
-      hint.textContent = "see? now imagine a busy café doing that all day ☕";
-    }
+  let carRaf, carSettle;
+  carTrack.addEventListener('scroll', () => {
+    cancelAnimationFrame(carRaf);
+    carRaf = requestAnimationFrame(() => {
+      const i = carIndex() % slideCount;
+      [...carDots.children].forEach((d, j) => d.classList.toggle('on', j === i));
+      carCap.textContent = carCaptions[i] || carCaptions[0];
+    });
+    // once scrolling settles on a clone, teleport to its real twin — invisible to the eye
+    clearTimeout(carSettle);
+    carSettle = setTimeout(() => {
+      const i = carIndex();
+      if (i < slideCount || i >= slideCount * 2) {
+        carTrack.scrollTo({ left: slideLeft(slideCount + (i % slideCount)), behavior: 'instant' });
+      }
+    }, 140);
   });
 
   // ── confetti ──
@@ -876,6 +1006,47 @@ pintrk('track', 'pagevisit', {
       if (e.key === 'Enter') joinWaitlist();
     });
   });
+
+  // ── FAQ: smooth open/close for <details> ──
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.faq details').forEach(d => {
+      const summary = d.querySelector('summary');
+      const body = d.querySelector('.a');
+      let anim = null, closing = false;
+      summary.addEventListener('click', e => {
+        e.preventDefault();
+        if (reduce) { d.open = !d.open; return; }
+        if (anim) anim.cancel();
+        d.style.overflow = 'hidden';
+        if (d.open && !closing) {
+          // close
+          closing = true;
+          const start = d.offsetHeight, end = summary.offsetHeight;
+          d.style.height = start + 'px';
+          anim = d.animate({ height: [start + 'px', end + 'px'] }, { duration: 260, easing: 'cubic-bezier(.4,0,.2,1)' });
+          anim.onfinish = () => { d.open = false; finish(); };
+          anim.oncancel = () => { closing = false; };
+        } else {
+          // open
+          closing = false;
+          d.style.height = d.offsetHeight + 'px';
+          d.open = true;
+          requestAnimationFrame(() => {
+            const start = d.offsetHeight, end = summary.offsetHeight + body.offsetHeight;
+            anim = d.animate({ height: [start + 'px', end + 'px'] }, { duration: 300, easing: 'cubic-bezier(.34,1.2,.64,1)' });
+            anim.onfinish = finish;
+          });
+        }
+        d.classList.add('animating');
+      });
+      function finish() {
+        anim = null; closing = false;
+        d.style.height = ''; d.style.overflow = '';
+        d.classList.remove('animating');
+      }
+    });
+  })();
 </script>
 
 </body>
