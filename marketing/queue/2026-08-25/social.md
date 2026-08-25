@@ -1,57 +1,57 @@
 # Social posts — 2026-08-25
 
-**angle:** dead space / unused ad space — the back of your laptop faces the whole café and advertises nothing.
+**angle:** anti-influencer — every other way to earn from a laptop asks you to become a brand. this one asks nothing of you.
 
 ---
 
 ## X / Threads
 
-the back of your laptop is unemployed.
+monetise your laptop. not your personality.
 
-a flat rectangle facing the whole café, advertising nothing.
+no posting. no followers. no promoting. no "hey guys."
 
-we rent it to a brand you approve. removable vinyl QR, $ per verified scan, peels off clean.
+just a brand you approved, a removable vinyl QR on your lid, and $ per verified scan.
 
 https://lidquid.com/?ref=x-20260825
-
-_(231 chars)_
 
 ---
 
 ## Instagram
 
-the back of your laptop is unemployed.
+monetise your laptop. not your personality.
 
-think about it. it's a flat rectangle, roughly poster-shaped, pointed at every single person in the café. and it's advertising nothing. some of you have a sticker from a conference in 2019 on it. that sticker is not paying rent.
+every other way to make money from a laptop wants you to become a brand first. post consistently. build an audience. find your niche. film yourself saying "hey guys" into a ring light at 7am.
 
-so we made it a job.
+we want none of that from you. genuinely none.
 
-a brand you approve → a removable vinyl QR sticker → your lid → strangers scan it because humans cannot leave a mystery alone → you earn $ per verified scan.
+here's the whole job: you approve a brand. a removable vinyl QR sticker turns up in the post. you stick it on your lid. you go to your café, exactly like you already do, and you work.
 
-verified means a real person, a real phone, a first-time scan. no bots, no you scanning it in a mirror.
+strangers scan it, because humans cannot leave a mystery alone. you earn $ per verified scan — real person, real phone, first-time scan.
 
-you don't post. you don't promote. you don't grow a following. you go to your café like you already do.
+your personality stays yours. your follower count stays exactly where it is. nobody has to know.
 
-want out? peel it off. zero residue. keep what you've earned.
+peels off clean, zero residue. want out? peel it off and keep what you've earned.
 
-right now it's a pilot — 50 laptops, one city at a time. cities open in order of waitlist demand, so the list is the vote.
+pilot's on — 50 laptops, one city at a time. cities open in order of waitlist demand, so the list is the vote.
 
 link in bio, or: lidquid.com/?ref=ig-20260825
 
 .
 .
 
-#sidehustle #sidehustleideas #freelancerlife #remotework #workfromanywhere #cafeworking #coffeeshopworking #studentlife #adspace #qrcode #tinybillboard #lidquid
+#sidehustle #sidehustleideas #passiveincomeideas #freelancerlife #remotework #workfromanywhere #cafeworking #studentlife #antiinfluencer #creatoreconomy #tinybillboard #lidquid
 
 ---
 
 ## LinkedIn
 
-Every laptop in every café has a blank side facing the room. Poster-shaped. Pointed at an audience. Advertising nothing.
+Most ways to earn money from a laptop require you to become a brand first: post consistently, build an audience, sell something.
 
-Lidquid rents that side to a brand the laptop owner approves — a removable vinyl QR sticker, $ per verified scan, zero residue when it comes off.
+Lidquid requires none of that. You approve a brand, a removable vinyl QR sticker goes on your lid, and you work from your café exactly as you already do.
 
-No posting, no promoting, no follower count. Strangers scan out of curiosity; that's the entire mechanism.
+Strangers scan out of curiosity. You earn $ per verified scan — a real person, a real phone, a first-time scan.
+
+The attention is the product. Not you.
 
 We're in pilot: 50 laptops, one city at a time, and cities open in order of waitlist demand.
 

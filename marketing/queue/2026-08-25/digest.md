@@ -4,47 +4,55 @@
 
 **No changes.** `git log --since='26 hours ago' --oneline` returned nothing — no commits to `main` in the last 26 hours.
 
-For context, since this is the first digest, here's where the repo currently stands. The most recent commit is `acfea02` — a landing page refresh that switched the currency to `$`, added the "How it works" four-step section, and updated the carousel and waitlist form. Before that: canonical and social meta URLs pointed at lidquid.com, Pinterest tag tracking added (pagevisit + waitlist signup conversion events, with unique event IDs), an FAQ section with FAQPage structured data, and the social / meeting-people highlight section.
+`main` is still at `acfea02` (landing page refresh: `$` currency, "How it works" section, carousel and form updates). Before that: canonical/social meta URLs pointed at lidquid.com, Pinterest tag tracking added (pagevisit + waitlist signup conversion, unique event IDs), FAQ section with FAQPage structured data, and the social / meeting-people highlight section.
 
-Two things worth noting for marketing purposes:
-- **Pinterest conversion tracking is already live** on the site, so pin traffic should be measurable end-to-end once pins go out.
-- The site now has **FAQ structured data**, which means the FAQ answers are the most authoritative copy in the repo. Drafts should not contradict them.
+Two things that matter for marketing:
+- **Pinterest conversion tracking is already live**, so pin traffic should be measurable end-to-end once pins actually go out.
+- The **FAQ structured data** makes the FAQ answers the most authoritative copy in the repo. Drafts must not contradict them.
 
 ## b) queue status
 
-**1 day of drafts exists** (this one). This was the first run — `marketing/` did not exist before today and was created by this run.
+⚠️ **Read this bit — the queue is not what it looks like from inside the repo.**
 
-Angles covered so far:
+`marketing/` does not exist on `main`. It has never been merged. **Five previous days of drafts exist, all sitting in open, unmerged pull requests:**
 
-| day | angle | headline |
-|---|---|---|
-| 2026-08-25 | dead space / unused ad space | "the back of your laptop is unemployed" |
+| day | PR | angle | headline |
+|---|---|---|---|
+| 2026-08-20 | [#1](https://github.com/HarryH-Tech-2/lidquid/pull/1) | dead space / unused asset | "Your laptop lid is dead space — rent it out to a brand you approve" |
+| 2026-08-21 | [#2](https://github.com/HarryH-Tech-2/lidquid/pull/2) | the perspective flip (same idea) | "you see one side of your laptop. strangers see the other" |
+| 2026-08-22 | [#3](https://github.com/HarryH-Tech-2/lidquid/pull/3) | social / ice-breaker | "my laptop lid makes small talk — and money" |
+| 2026-08-23 | [#4](https://github.com/HarryH-Tech-2/lidquid/pull/4) | ad space you already own (same idea) | "you own a billboard. you've just been sitting behind it." |
+| 2026-08-24 | [#5](https://github.com/HarryH-Tech-2/lidquid/pull/5) | dead space / unused real estate (same idea) | "the back of your laptop is doing nothing. rent it out." |
+| 2026-08-25 | this one | **anti-influencer** | "monetise your laptop. not your personality." |
 
-Angles still unused, roughly in the order I'd rotate them:
+**This is a systemic bug, not a coincidence.** Each run checks `marketing/queue/*/` on a fresh clone of `main`, finds nothing, correctly concludes "this is the first run", and picks the most obvious angle — which is the same obvious angle every time. Four of the five previous days are the *same* dead-space/ad-space idea in different words. Every one of those PR bodies says some version of "this is the first entry in `marketing/queue/`".
 
+Today's first draft fell into exactly the same trap: it was written as "the back of your laptop is unemployed", which is yesterday's headline with a different adjective. It was caught only by listing the repo's pull requests, and was rewritten from scratch onto the anti-influencer angle. **Future runs should list open PRs, not just read `marketing/queue/`.**
+
+Angles genuinely covered: dead space / ad space (×4), social ice-breaker (×1), anti-influencer (×1, today).
+
+Still unused:
 - coffee money / "this is how I earn coffee money"
-- the social / ice-breaker angle ("wait, what *is* that?")
 - you approve the brand — control and veto
 - peels off clean / zero residue — the objection-killer
 - cities open by demand — vote with your city
-- freelancer + remote-worker life
-- student life
+- student life (seasonally urgent — late August)
 - café-regular identity
-- verified scan — what actually counts, and why brands trust it
+- what counts as a verified scan, and why brands trust it
 
 ## c) three things to make next
 
-**1. The ice-breaker angle, as the next pin.**
-The site itself flags this as "the part nobody expects", and it's the one claim Lidquid has that no other side-hustle pitch can make: the money is the hook, but *meeting the freelancer two tables over* is the thing people screenshot and send to a friend. Every competing "earn passive income" pin is about money. This one isn't, so it will not look like the rest of the feed. Headline direction: "my laptop introduced me to four people this month."
+**1. Merge the backlog — or change the workflow so it stops mattering.**
+This is the highest-value action available and it isn't a content idea. Six days of drafts are stacked in six open PRs that all branch from the same commit, all touch different folders, and therefore won't conflict. Until at least one merges, every future run will keep re-deriving the same angle from an empty repo and the rotation instruction cannot work. Alternative if the PRs are deliberately being held for review: have the agent read open PRs as part of its context, and keep an append-only `marketing/angles.md` ledger — an idea PR #2 already proposed and which nothing has acted on because PR #2 never merged either.
 
-**2. An FAQ-answer mini-series — one pin per objection.**
-The FAQ section is already written, already structured-data'd, and every answer is a self-contained hook: *will it wreck my laptop?* → "peels off clean, zero residue." *do I get a say?* → "you approve every brand." *what if I want out?* → "peel it off. done." These are the objections that stop someone joining the waitlist, and answering them one at a time gives four to six days of drafts that stay strictly inside claims the site already makes. Low risk, high reuse.
+**2. The student angle, this week specifically.**
+Term starts in a few weeks and students are moving into new cities right now — the one moment when "which city are you in?" is a live question rather than a dormant one, and when a laptop's daily café/library hours jump. This is the only unused angle with an expiry date on it; everything else on the list is evergreen and will keep. PR #3 flagged this too, back on the 22nd, and the window has been narrowing since.
 
-**3. A "which city are you voting for?" post built for comments.**
-Cities open in order of waitlist demand, which makes the CTA genuinely participatory rather than a plain email capture — naming your city is the vote. That's an unusually good fit for Instagram and X, where a post that asks a specific answerable question ("drop your city") gets replies, and replies get reach. It also produces something operationally useful: a public read on which cities are actually asking, which feeds the pilot's rollout order.
+**3. A "peels off clean" objection-handler, as a three-panel peel strip.**
+"Will the sticker wreck my laptop?" is the first question in the site's own FAQ, which is a strong hint about where the funnel quietly loses people. It's currently answered in words only. A three-panel visual — sticker on, mid-peel, bare lid — answers it in about one second, needs no earnings claims, and is reusable on Pinterest, in Stories, and inside the FAQ itself. Three separate previous runs have suggested a version of this and none has been made.
 
 ## d) blockers / what's missing this run
 
-- **`pin.png` was not downloaded.** The Canva design was generated and exported successfully, but this session's egress proxy returns a 403 policy denial for `export-download.canva.com` and `design.canva.ai`, so the file could not be pulled into the repo. Full detail, the design link, and the manual 30-second workaround are in `pin-image-status.md`. The `image_prompt` in `pin.md` is the intended fallback and is unaffected.
-- **Fix for future runs:** allowlist `export-download.canva.com` and `design.canva.ai` in the environment's network policy; this step will otherwise fail identically every day.
-- The generated Canva design also has minor text defects (a duplicated line, missing doodle pills) — noted in `pin-image-status.md` for whoever reviews it.
+- **`pin.png` was not downloaded** — sixth run in a row. The Canva design was generated, corrected, committed and exported fine; the session's egress proxy returns a 403 policy denial for `export-download.canva.com` and `design.canva.ai`. Full detail, design link and manual workaround in `pin-image-status.md`. The `image_prompt` in `pin.md` is the unaffected fallback.
+- **Fix:** allowlist those two hosts in the environment's network policy. Six runs, six finished designs, zero committed PNGs.
+- The generated design has one off-message defect worth a human's eye: **the laptop is drawn open with the QR on the screen**, rather than a closed lid seen from behind. Noted in `pin-image-status.md`.

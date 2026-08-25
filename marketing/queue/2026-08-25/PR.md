@@ -1,46 +1,58 @@
-One day of marketing drafts for review. Nothing here is published — these are drafts only, and no file outside `marketing/queue/2026-08-25/` is touched.
+One day of marketing drafts for review. Nothing here is published — drafts only, and no file outside `marketing/queue/2026-08-25/` is touched.
 
-This is the **first** run, so `marketing/` did not previously exist and the queue starts here.
+## ⚠️ First, something that needs a decision
+
+**Five previous days of drafts (#1–#5) are still open and unmerged**, so `marketing/` has never existed on `main`. Every daily run clones `main`, finds no `marketing/queue/`, correctly concludes "this is the first run", and reaches for the most obvious angle — the same one every time.
+
+The result: **four of the five previous days are the same dead-space/ad-space idea reworded.**
+
+| day | PR | angle | headline |
+|---|---|---|---|
+| 08-20 | #1 | dead space | "Your laptop lid is dead space — rent it out" |
+| 08-21 | #2 | the perspective flip | "you see one side of your laptop. strangers see the other" |
+| 08-22 | #3 | social / ice-breaker | "my laptop lid makes small talk — and money" |
+| 08-23 | #4 | ad space you already own | "you own a billboard. you've just been sitting behind it." |
+| 08-24 | #5 | dead space | "the back of your laptop is doing nothing. rent it out." |
+
+Today's draft initially fell into the same trap — "the back of your laptop is unemployed", which is yesterday's headline with a different adjective. It was caught by listing the repo's open PRs and **rewritten from scratch** onto a genuinely unused angle.
+
+Until at least one of these merges, the rotation instruction cannot work. The six branches all fork from `acfea02` and touch different folders, so they won't conflict with each other.
 
 ## Angle
 
-**Dead space — the back of your laptop is unemployed.**
+**Anti-influencer — monetise your laptop, not your personality.**
 
-Your lid is a flat, poster-shaped rectangle pointed at every person in the café, and it's advertising nothing. Foundational angle for day one: it sets up the core proposition (your lid is inventory) before later days rotate into coffee money, the ice-breaker angle, brand approval, peels-off-clean, and cities-by-demand.
+Every other way to earn from a laptop asks you to become a brand first: post consistently, build an audience, film yourself. Lidquid asks nothing of you. This is the site's own differentiator ("no posting, no follower count, no promoting") and it has never been used. It also sidesteps earnings entirely, which is convenient while there are no pilot numbers to publish.
 
 ## Pin
 
-**Title:** the back of your laptop is unemployed — rent your lid as ad space
+**Title:** monetise your laptop, not your personality — rent your lid as ad space
 
-Board suggestion: *Side Hustle Ideas / Work-From-Café Life*. Description is 476 chars, 8 hashtags, alt text and a full text-to-image `image_prompt` included.
+Board suggestion: *Side Hustle Ideas That Don't Need An Audience*. Description 494/500 chars, 8 hashtags, alt text, and a full text-to-image `image_prompt` included.
 
 ## Social previews
 
-- **X / Threads** (231 chars) — "the back of your laptop is unemployed. a flat rectangle facing the whole café, advertising nothing."
-- **Instagram** — same hook, then the mechanism start to finish, with a dig at the conference sticker from 2019 that isn't paying rent. 12 hashtags.
-- **LinkedIn** — five straight lines: every café laptop has a blank side facing the room; we rent it to a brand the owner approves.
+- **X / Threads** (223 chars) — "monetise your laptop. not your personality. no posting. no followers. no promoting. no 'hey guys.'"
+- **Instagram** — opens on the same line, then the ring-light-at-7am contrast, then the whole job start to finish. Closes on "your personality stays yours." 12 hashtags.
+- **LinkedIn** — five lines. "Most ways to earn money from a laptop require you to become a brand first." Lands on: the attention is the product, not you.
 
 ## Digest — 3 suggestions for what to make next
 
-1. **The ice-breaker angle as the next pin.** The site calls it "the part nobody expects", and it's the one claim no competing side-hustle pitch can make. Every rival pin is about money; this one wouldn't be, so it won't look like the rest of the feed.
-2. **An FAQ-answer mini-series, one pin per objection.** The FAQ answers are already written and already structured-data'd, and each is a self-contained hook ("peels off clean", "you approve every brand", "peel it off, done"). Four to six days of drafts that stay strictly inside claims the site already makes.
-3. **A "which city are you voting for?" post built for comments.** Cities open in order of waitlist demand, so naming your city genuinely is the vote — a rare CTA that's participatory rather than a plain email capture, and it produces a public read on which cities are actually asking.
+1. **Merge the backlog, or teach the agent to read open PRs.** The highest-value fix available, and not a content idea. PR #2 already proposed an append-only `marketing/angles.md` ledger; nothing acted on it because PR #2 never merged either.
+2. **The student angle, this week.** Term starts soon and students are moving into new cities right now — the only unused angle with an expiry date. Flagged on the 22nd; the window has been narrowing since.
+3. **A "peels off clean" three-panel peel strip.** "Will it wreck my laptop?" is the first question in the site's own FAQ and is answered in words only. Three previous runs have suggested a version of this; none has been made.
 
-## ⚠️ One thing needs a human: `pin.png` is missing
+## ⚠️ `pin.png` is missing — sixth run running
 
-The Canva design **was** generated and exported successfully at the correct 1000×1500 (2:3). Only the download into the repo failed — this session's egress proxy returns a **403 policy denial** on `export-download.canva.com` and `design.canva.ai`. Policy denials aren't retried or routed around, so the blocked hosts are reported instead.
+The Canva design was generated, corrected, committed and exported successfully. Only the download failed: this session's egress proxy returns a **403 policy denial** on `export-download.canva.com` and `design.canva.ai`. Policy denials aren't retried or routed around.
 
-The design is in the Canva account and takes about 30 seconds to pull down by hand:
+**~30 seconds of human work:** open https://www.canva.com/d/E9t7HXwDntUvivj (design `DAHTTDW_D78`), download PNG at 1000×1500, save as `marketing/queue/2026-08-25/pin.png`.
 
-- **Design ID:** `DAHTTIOlxH8`
-- **Edit:** https://www.canva.com/d/sLJXtqrY2ixicTO
+**Permanent fix:** allowlist those two hosts. Six runs, six finished designs, zero committed PNGs.
 
-Two follow-ups, both in `pin-image-status.md`:
+Unlike previous runs, the layout **was** seen this time — Canva's editing API returns inline thumbnails through the MCP tool rather than over the blocked hosts. Four defects were found and fixed: a stray `/` in the headline, an entirely unlabelled doodle pill, `no followers` and `$ per verified scan` crammed into one text element, and the tagline dumped into a pill instead of under the wordmark.
 
-- **Allowlist those two hosts** in the environment's network policy, or this step fails identically every single day.
-- The generated design has minor text defects — "I get paid every time you scan this" is duplicated, and the `$ per verified scan` / `you approve the brand` doodle pills didn't render. Worth fixing in the editor before use.
-
-The `image_prompt` in `pin.md` is the intended fallback and works with any text-to-image model.
+**One thing I'd fix before publishing:** the laptop is drawn *open with the QR on the screen*, rather than a closed lid seen from behind — off-message for a product about the back of a lid. It needs the illustration swapped or a regenerate; text edits can't reach it. Details in `pin-image-status.md`.
 
 ## Checks
 

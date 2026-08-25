@@ -1,42 +1,48 @@
 # pin.png — not downloaded (network policy, not a Canva failure)
 
-**Status:** the Canva design was created and exported successfully. Only the *download* into this repo failed.
+**Status:** the Canva design was generated, corrected, committed and exported successfully. Only the *download* into this repo failed.
 
-## What worked
-- Generated 4 pin candidates via the Canva MCP tools.
-- Created an editable design from the first candidate.
-- Confirmed the page is **1000 × 1500 px** (2:3 Pinterest ratio) — correct.
-- Confirmed PNG export is supported and ran the export job — it returned `status: success` with a signed download URL.
+This is the **sixth consecutive run** to hit this. See "Fix this once" at the bottom.
 
 ## What failed
-Downloading the exported PNG. This session's egress proxy refused the connection with a **403 policy denial** on two Canva hosts:
+This session's egress proxy refuses the Canva download hosts with a **403 policy denial**:
 
 ```
-design.canva.ai:443          403 to CONNECT  (candidate thumbnails)
-export-download.canva.com:443 403 to CONNECT  (the PNG export)
+export-download.canva.com:443   403 to CONNECT   (the PNG export)
+design.canva.ai:443             403 to CONNECT   (candidate thumbnails)
 ```
 
-Per the proxy guidance, organization policy denials are not retried or routed around — the blocked hosts are reported instead. This is an allowlist gap in the session's network policy, not a Canva problem, and it will recur on every run until those hosts are permitted.
+Per the agent proxy's own guidance, a 403 on CONNECT is an organisation policy denial and must not be retried or routed around — the blocked host is reported instead. Attempted twice (once per export), then stopped.
 
-## How to get the image (30 seconds, manual)
-The design is sitting in the Canva account:
+## The design is finished and ready to download
+- **Design ID:** `DAHTTDW_D78`
+- **Title:** "Playful 1970s Risograph Poster with Laptop"
+- **Edit:** https://www.canva.com/d/E9t7HXwDntUvivj
+- **View:** https://www.canva.com/d/-Lfvp9R5sNXOQ5J
 
-- **Design ID:** `DAHTTIOlxH8`
-- **Title:** "Vintage Laptop-Themed Zine Poster"
-- **Edit:** https://www.canva.com/d/sLJXtqrY2ixicTO
-- **View:** https://www.canva.com/d/F1KjsBS-M1R-2xb
+Open it → Download → PNG → 1000 × 1500 → save here as `pin.png`. No other edits needed.
 
-Open it, download as PNG (1000 × 1500), and drop it in this folder as `pin.png`.
+## What was verified and fixed
+Unusually, the layout **was** seen this run — the Canva editing API returns inline after-edit thumbnails, which are delivered through the MCP tool rather than over the blocked hosts. So this pin was checked by eye, not just by reading the text back.
 
-## Known imperfections in the generated design
-Worth a look before publishing — the text layer read back as:
+Four defects were found in the generated design and fixed:
 
-> unemployed, / I get paid every time you scan this. / I get paid every time you scan this. / lidquid / your lid / their ad / peels off clean / .com / the back / of your laptop
+1. Headline rendered as `monetise /` with a stray slash — removed.
+2. The second doodle pill had **no label at all** (an empty text element).
+3. `no followers` and `$ per verified scan` were crammed into a **single** text element — the same run-on defect the 2026-08-23 run reported, so it looks like a recurring habit of the generator.
+4. The tagline `your lid · their ad · your money` had been dumped into the fourth pill instead of sitting under the wordmark.
 
-So: the headline and the sticker line rendered, but **"I get paid every time you scan this" is duplicated**, and the doodle pills came through incomplete — `$ per verified scan`, `you approve the brand` and the `your money` half of the tagline are missing. Fixable in the Canva editor, or regenerate.
+Fixes 2 and 4 could not be applied with `replace_text` — Canva returns `internal_error` when targeting an empty text element. Adding new text elements and formatting them to match worked.
+
+Verified in the final render: headline correct, all four labels present, `lidquid.com` in full, tagline under the wordmark, `$` used throughout, no invented figures.
+
+## Still worth a human's eye before publishing
+- **The laptop is drawn open, with the QR on the screen.** Lidquid is about the *back of a closed lid*, so this is off-message. It can't be fixed with text edits — it needs the illustration swapped, or a regenerate. This is the one thing that would stop me publishing as-is.
+- The four bottom motifs came out as literal objects (a sun, a swirl, a capsule, a coin) rather than badge-shaped doodle pills. The 2026-08-23 run hit the same "pills means medicine" misreading. Cosmetic.
+- No liquid-drip melt on the QR, and the crossed-out creator gear (ring light, tripod, "hey guys") reduced to a single un-crossed phone doodle — so the anti-influencer joke doesn't land visually.
 
 ## Fallback
-`pin.md` contains a complete `image_prompt` written for any text-to-image model, in full brand style with the exact headline to render. That is the intended fallback and needs no Canva access.
+`pin.md` carries a complete `image_prompt` in full brand style with the exact headline, written for any text-to-image model. It needs no Canva access.
 
-## Suggested fix for future runs
-Add `export-download.canva.com` and `design.canva.ai` to the environment's allowed egress hosts. After that this step should complete unattended.
+## Fix this once
+Add `export-download.canva.com` and `design.canva.ai` to the environment's allowed egress hosts. Six runs have now produced six finished Canva designs and zero committed PNGs; every one needs the same manual download. This is the single highest-value fix to the pipeline.
