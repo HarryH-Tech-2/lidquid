@@ -1,50 +1,50 @@
 # Social — 2026-08-30
 
-**Angle:** the no-posting side hustle (no content, no followers, no promoting)
+**Angle:** cities open by demand — joining the waitlist is the vote for your city
 
 ---
 
 ## X / Threads (≤240 chars)
 
-every side hustle asks you to make content.
+we're not picking the first city in an office.
 
-this one just asks you to sit in a café.
+lidquid opens cities in order of waitlist demand — 50 laptops, one at a time. whoever shows up most goes first.
 
-one sticker on your laptop lid. strangers scan it because they're nosy. you get paid per verified scan.
+so: email + your city. that's the vote.
 
 https://lidquid.com/?ref=x-20260830
+
+*(234 chars)*
 
 ---
 
 ## Instagram
 
-no posting. no followers. no "building a personal brand."
+nobody in an office is choosing which city goes first.
 
-just a sticker on the back of your laptop.
+the pilot is 50 laptops, one city at a time, and cities open in order of waitlist demand. that's it — that's the whole selection process. the city with the most people asking goes first. so putting your email and your city in the box isn't signing up for a newsletter, it's a vote.
 
-here's the whole thing: we rent your lid to a brand — one you approve, before anything ships. it arrives as removable vinyl with a QR on it. you go to your café like you always do. someone at the next table gets nosy, scans it, and that's a verified scan: real person, real phone, first time. you earn $ on those.
+what you're voting for, to be clear:
 
-that's it. that's the job. the job is sitting down.
+a removable vinyl sticker on the back of your laptop lid, with a QR on it, from a brand you've approved before anything ships. you go to your café like you already do. someone at the next table gets nosy and scans it. that's a verified scan — real person, real phone, first time — and you earn $ on it.
 
-want out? peel it off. zero residue, zero lock-in, keep what you've earned.
+no posting. no followers. no promoting. want out? peel it off, zero residue, keep what you've earned.
 
-right now it's a pilot — 50 laptops, one city at a time. cities open in order of waitlist demand, so joining is basically voting for yours.
-
-link in bio ✌️
+your city won't open by itself ✌️
 https://lidquid.com/?ref=ig-20260830
 
-#sidehustle #sidehustleideas #passiveincomeideas #cafelife #coffeeshopwork #remotework #workfromanywhere #freelancerlife #laptoplifestyle #studentlife #cafehopping #digitalnomadlife
+#sidehustle #sidehustleideas #cafelife #coffeeshopwork #remotework #workfromanywhere #freelancerlife #laptoplifestyle #cafehopping #studentlife #digitalnomadlife #wfhlife
 
 ---
 
 ## LinkedIn
 
-Most "make money on the side" advice eventually means: make content.
+We're not choosing the first Lidquid city in a meeting.
 
-Lidquid doesn't. We rent the back of your laptop lid to a brand you approve — a removable vinyl QR sticker — and you earn per verified scan when a real person scans it for the first time.
+The pilot is 50 laptops, one city at a time — and cities open in order of waitlist demand. The city with the most people asking is the city that goes first.
 
-No posting, no follower count, no promoting. You work from your café exactly like you already do.
+So the waitlist isn't a mailing list. It's the vote, and the whole ask is an email and a city name.
 
-It's a pilot: 50 laptops, one city at a time, and cities open in order of waitlist demand.
+What you're voting for: a removable vinyl QR sticker on the back of your laptop lid, from a brand you approve before anything ships, earning you $ per verified scan when a stranger scans it out of curiosity. No posting, no followers, no promoting.
 
-Join the waitlist and vote for yours: https://lidquid.com/?ref=li-20260830
+Vote for yours: https://lidquid.com/?ref=li-20260830

@@ -1,35 +1,43 @@
 One day of marketing drafts for review. Nothing here is published — drafts only.
 
-## Angle
-**The no-posting side hustle** — no content, no followers, no promoting. Every other side hustle asks you to make something; this one asks you to sit in a café like you already do. Chosen as the day-one angle because it's the sharpest contrast with what "side hustle" content usually means, and it maps directly to the site's own "no posting, no followers, no promoting — curiosity does the work" line.
+## ⚠️ Read this first: the queue has been repeating itself
 
-First run of the agent, so there were no previous queue entries to differentiate against.
+This run found something worth acting on before the content itself. There are **ten previous marketing PRs, none of them merged** (`marketing/2026-08-20` … `2026-08-29`). Because none reached `main`, each daily run starts with an empty `marketing/` directory and can't see what came before — and the result is that **8 of the 10 previous days are the same "dead space / your lid is ad space" angle** in different words. 2026-08-27's own notes claim it's "day 1 of the rotation — nothing else has used this yet," which was already false by six days.
+
+Today's draft initially made the same mistake before the unmerged branches were checked, and was rewritten. Full breakdown table in `digest.md`.
+
+**Suggested fix:** merge or close the open PRs, or switch the agent to one long-lived `marketing` branch so each run can see the history.
+
+## Angle
+**Cities open by demand — joining the waitlist is the vote for your city.** Nothing in the queue has used the waitlist mechanic itself, and it's the only claim on the site with a reason to act *today* rather than eventually. It also rides the referral link the success state already hands out.
 
 ## Pin
-**Title:** `no posting. no followers. just a sticker on your laptop.`
+**Title:** `which city gets the first 50 laptops? you vote by joining the waitlist`
+**Headline on the image:** "which city goes first? you vote by joining."
 **Link:** `https://lidquid.com/?ref=pin-20260830`
-**Board:** Side Hustles That Aren't Content Creation
+**Board:** Café Work Life / Remote Work Money
 
 ## Social previews
-- **X / Threads** — "every side hustle asks you to make content. this one just asks you to sit in a café."
-- **Instagram** — "no posting. no followers. no 'building a personal brand.' just a sticker on the back of your laptop." (full caption + 12 hashtags)
-- **LinkedIn** — "Most 'make money on the side' advice eventually means: make content. Lidquid doesn't."
+- **X / Threads** — "we're not picking the first city in an office… whoever shows up most goes first." (234 chars)
+- **Instagram** — "nobody in an office is choosing which city goes first." (full caption + 12 hashtags)
+- **LinkedIn** — "The waitlist isn't a mailing list. It's the vote, and the whole ask is an email and a city name."
 
 ## ⚠️ pin.png is missing
-The Canva design was generated and exported successfully, but this session's network policy denies `export-download.canva.com` and `design.canva.ai`, so the PNG couldn't be downloaded — and the candidate thumbnails couldn't be previewed either, meaning **candidate 1 was chosen without visual review**.
+The Canva design was generated and exported successfully, but this session's network policy denies `export-download.canva.com` and `design.canva.ai`. Three download attempts across two hosts, all refused at CONNECT. The thumbnails were unreachable too, so **candidate 1 was picked without visual review**.
 
-Design to check and download by hand: https://www.canva.com/d/h-pst-INij885ve
-Full details, the three alternate candidates, and the fallback are in `pin-image-status.md`. The `image_prompt` in `pin.md` is complete and works in any text-to-image tool.
+Design to check and download by hand: https://www.canva.com/d/ZRVjyspH_Lj-4Hj
+Alternates, details and fallback in `pin-image-status.md`. The `image_prompt` in `pin.md` is complete and works in any text-to-image tool. Every previous day likely hit this same wall, so the whole queue is probably image-less.
 
 ## Suggestions for next
-1. **Run the "cities open in order of demand" angle** — the only claim on the site with a reason to act *today*, and it rides the referral link the success state already hands out.
-2. **Make a "what counts as a verified scan" explainer strip** — the biggest cold-visitor trust gap ("what stops someone scanning it 400 times?") is answered well in the FAQ but invisible on social.
-3. **Build a reusable Canva pin template** instead of generating fresh daily — makes the image a text swap rather than a generative gamble, and keeps the Pinterest board visually consistent.
+1. **Merge or close the ten open PRs before generating a twelfth day** — the backlog is what's causing the repetition, and no content idea fixes that.
+2. **Make a "what counts as a verified scan" explainer strip** — the biggest cold-visitor trust gap is answered well in the FAQ but invisible on social, and it's structurally different from the eleven headline posters already queued.
+3. **Build a reusable Canva pin template** — turns the daily image into a text swap instead of a blind generative gamble, and keeps the Pinterest board consistent.
 
 ## Review checklist
 - [ ] Claims stay within what `index.html` says — no invented rates or earnings figures
 - [ ] Currency is `$` throughout
 - [ ] Voice reads playful and dry, not corporate
+- [ ] Angle doesn't duplicate an unmerged branch
 - [ ] Attach `pin.png` (or re-generate from the `image_prompt`) before scheduling
 
 ---
