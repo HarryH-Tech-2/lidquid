@@ -1,54 +1,54 @@
 # Social — 2026-09-09
 
-**angle:** ad space you already own — the billboard you happen to sit behind
+**angle:** no lock-in / the escape hatch — the only side hustle you can quit with your thumbnail
 
 ---
 
-## X / Threads (≤240 chars)
+## X / Threads
 
-the back of your laptop is the only ad space you own and never see.
+every side hustle wants a commitment. this one comes off with your thumbnail.
 
-lidquid rents it out. strangers scan the QR out of curiosity, you earn $ per verified scan.
+lidquid rents your laptop lid to a brand you approve. $ per verified scan.
 
-you approve the brand. peels off clean.
+no lock-in. peel it off whenever.
 
 https://lidquid.com/?ref=x-20260909
 
-<!-- 238 chars -->
+<!-- 225 chars -->
 
 
 ---
 
 ## Instagram caption
 
-you own a billboard.
+your notice period is one peel.
 
-you're just sitting behind it.
+that's the whole exit process. no email to write, no 30 days, no "we're sad to see you go" survey.
 
-the back of your laptop does nothing all day. it faces the room, the queue, the guy waiting for his flat white — and it's blank.
+lidquid rents the back of your laptop to a brand you approve. removable vinyl QR sticker, strangers scan it out of curiosity, you earn $ per verified scan — real person, real phone, first time.
 
-lidquid puts a removable vinyl QR sticker on it. strangers scan out of curiosity. you earn $ per verified scan — real person, real phone, first time.
+and if you're bored of it on tuesday? peel. zero residue, because it's vinyl made for laptop lids. you keep everything you've earned up to that day.
 
-things you do not have to do: post, promote, have followers, mention it once.
+no lock-in. no minimum term. no fees.
 
-things you do get to do: approve the brand before it ships. peel it off whenever you like. keep what you've earned.
+it's the least clingy money you'll ever make.
 
-pilot right now — 50 laptops, one city at a time. cities open in order of waitlist demand, so joining the list is the vote.
+pilot now — 50 laptops, one city at a time. cities open in order of waitlist demand, so joining is the vote.
 
 link in bio 👉 lidquid.com/?ref=ig-20260909
 
-#sidehustle #sidehustleideas #passiveincome #freelancerlife #remotework #workfromanywhere #digitalnomad #cafeworking #coffeeshopoffice #laptopstickers #studentlife #extraincome
+#sidehustle #sidehustleideas #nocommitment #passiveincome #freelancerlife #remotework #workfromanywhere #cafeworking #coffeeshopoffice #studentmoney #extraincome #laptopstickers
 
 ---
 
 ## LinkedIn
 
-The back of a laptop is the most-seen, least-used surface in any café.
+Most side income asks you to commit before you know if you like it.
 
-It faces the room all day. It's blank.
+Lidquid's exit process is peeling a sticker off.
 
-Lidquid rents it to a brand you approve — a removable vinyl QR sticker on your lid, $ per verified scan (real person, real phone, first scan). No posting, no follower count, no promoting.
+A removable vinyl QR goes on your laptop lid, strangers scan it out of curiosity, and you earn $ per verified scan. You approve the brand first. No posting, no follower count.
 
-We're running a pilot: 50 laptops, one city at a time, opening in order of waitlist demand.
+Changed your mind? Peel it off, keep what you've earned. No lock-in, no minimum term, no fees.
 
-Join the list and vote for your city: https://lidquid.com/?ref=li-20260909
+Pilot now — 50 laptops, one city at a time: https://lidquid.com/?ref=li-20260909

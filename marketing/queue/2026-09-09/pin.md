@@ -1,34 +1,36 @@
 # Pinterest pin — 2026-09-09
 
-**angle:** ad space you already own — the billboard you happen to sit behind
+**angle:** no lock-in / the escape hatch — the only side hustle you can quit with your thumbnail
+
+*(Deliberately not the "dead space / your lid is ad space" angle, which has led 14 of the 20 previous days. "Peels off clean" has appeared as a supporting line in every prior day but has never been the hook.)*
 
 ---
 
 **title**
-You own a billboard. You're sitting behind it.
+Your notice period is one peel — the side hustle you can quit with a thumbnail
 
 **description**
-The back of your laptop is the one bit of ad space you own and never look at. Lidquid rents it out. A removable vinyl QR sticker goes on your lid, strangers in cafés scan it because they're nosy, and you earn $ per verified scan — a real person, a real phone, a first scan. You approve the brand before anything ships. No posting, no followers, no promoting. Peels off clean whenever you're done. Right now it's a pilot: 50 laptops, one city at a time, and cities open in order of waitlist demand.
+Every side hustle wants something from you: a commitment, a posting schedule, a follower count. This one comes off with your thumbnail. Lidquid rents the back of your laptop lid to a brand you approve — a removable vinyl QR sticker that strangers scan out of curiosity, earning you $ per verified scan. No lock-in, no minimum term, no fees. Want out? Peel it off, keep everything you've earned, and your lid goes back to being a lid. Zero residue. Pilot now: 50 laptops, one city at a time.
 
 **hashtags**
-#sidehustle #passiveincome #freelancerlife #remotework #cafeworking #digitalnomad #laptopstickers #sidehustleideas
+#sidehustle #sidehustleideas #nocommitment #freelancerlife #remotework #cafeworking #passiveincome #studentmoney
 
 **alt_text**
-Cream zine-style poster with a hand-drawn ink border. Chunky black headline reads "you own a billboard. you're sitting behind it." Below, an illustrated open laptop seen from behind with a bright yellow QR sticker on the lid, and small handwritten words "$ per verified scan" and "lidquid.com".
+Cream zine-style poster with a hand-drawn ink border. Chunky black headline reads "your notice period is one peel." Below, an illustrated laptop lid with a QR sticker being peeled back at one corner by a hand, revealing clean bare lid underneath, with handwritten words "zero residue" and "lidquid.com".
+
+**image_prompt**
+Riso-print zine poster, 2:3 portrait, 1000x1500. Warm cream paper background #f6f1e7 with a faint dot grid and visible paper grain. A thick, imperfect hand-drawn ink border in black #1c1a17 frames the poster, rotated about -1.5 degrees, with a hard offset shadow.
+
+Top third: chunky black display headline, all lowercase, tightly set, rendering the exact text "your notice period" on one line and "is one peel." on the next. The words "one peel" sit on a rough sun-yellow #ffb703 marker highlight swipe that overshoots the letters.
+
+Middle, the hero image: a flat illustrated laptop lid seen straight on, thick uneven ink outlines, no gradients. A square sticker with chunky rounded QR modules sits on the lid — its three finder squares in sun yellow #ffb703, coral #ff5d47 and deep teal #0f766e, and its bottom edge melting into a few liquid drips. The top-right corner of the sticker is peeled up and curling away, held by a simple ink-outline hand, showing clean bare lid underneath. A few small motion ticks around the peeling corner.
+
+Lower third: two hand-drawn rounded doodle pills with 2.5px ink outlines and hard offset shadows — one sun yellow reading "zero residue", one deep teal with cream text reading "no lock-in". Beneath them, marker handwriting in a Gochi Hand style: "lidquid.com".
+
+Palette strictly cream #f6f1e7, ink black #1c1a17, sun yellow #ffb703, coral #ff5d47, deep teal #0f766e. Flat riso screenprint look, slight ink misregistration, hard shadows. No photorealism, no gradients, no 3D, no stock-photo people, no currency symbol other than "$".
 
 **link**
 https://lidquid.com/?ref=pin-20260909
 
 **board**
 Side Hustles That Aren't Annoying
-
-**image_prompt**
-Riso-print zine poster, 2:3 portrait, 1000x1500. Warm cream paper background #f6f1e7 with a faint dot grid, visible paper grain. A thick, imperfect hand-drawn ink border in black #1c1a17 frames the whole poster, rotated about -1.5 degrees with a hard offset shadow.
-
-Top third: chunky black display headline, all lowercase, tightly set, rendering the exact text "you own a billboard." on one line and "you're sitting behind it." on the next. The word "billboard" sits on a rough sun-yellow #ffb703 marker highlight swipe that overshoots the letters slightly.
-
-Middle: a flat illustrated laptop drawn from behind, three-quarter view, thick uneven ink outlines, no gradients. On the lid, a square sticker with chunky rounded QR modules; the three finder squares are sun yellow #ffb703, coral #ff5d47 and deep teal #0f766e; the bottom edge of the QR melts into a few liquid drips. A strip of coral washi tape holds one corner of the sticker. Small ink doodle arrows point at the lid.
-
-Lower third: two hand-drawn rounded doodle pills with 2.5px ink outlines and offset shadows, one sun yellow reading "$ per verified scan", one deep teal with cream text reading "peels off clean". Beneath them, marker handwriting in a Gochi Hand style: "lidquid.com".
-
-Palette strictly cream #f6f1e7, ink black #1c1a17, sun yellow #ffb703, coral #ff5d47, deep teal #0f766e. Flat riso screenprint look, slight ink misregistration, hard shadows, no photorealism, no gradients, no 3D, no stock-photo people, no currency symbols other than "$".

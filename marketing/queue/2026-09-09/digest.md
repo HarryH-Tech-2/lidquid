@@ -2,26 +2,37 @@
 
 ## a) Repo changes since the last run
 
-**No changes.** `git log --since='26 hours ago'` is empty. The most recent commit is `acfea02` from 2026-08-20 ("Landing page refresh: $ currency, How-it-works section, carousel and form updates"), about three weeks ago. The site copy this draft mirrors is stable.
+**No changes.** `git log --since='26 hours ago'` is empty. The newest commit on `main` is `acfea02` from 2026-08-20 ("Landing page refresh: $ currency, How-it-works section, carousel and form updates") — about three weeks old. The landing-page copy these drafts mirror is stable.
 
 ## b) Queue status
 
-**1 day of drafts exist** — this one. `marketing/` did not exist before today; this is the first run of the agent, so there is no back catalogue to differentiate against.
+**21 days of drafts now exist (2026-08-20 → 2026-09-09) — and none of them are on `main`.**
 
-Angles covered so far:
+Every day's run opens a PR and every one of those PRs is still open. PRs #1–#20 are unmerged; today's is #21. `marketing/` doesn't exist on `main` at all, which is why a fresh checkout looks like an empty slate. The drafts only exist on their branches.
 
-| Day | Angle | Headline |
+Two systemic problems are visible from the back catalogue, and both need a human decision rather than another day of drafts:
+
+**1. Angle repetition.** The "dead space / the side you never see / your lid is ad space" angle has led **14 of the 20 previous days**:
+
+| Angle | Days | Dates |
 |---|---|---|
-| 2026-09-09 | ad space you already own — the billboard you sit behind | "you own a billboard. you're sitting behind it." |
+| dead space / side you never see / ad space you own | **14** | 08-20, 08-21, 08-23, 08-24, 08-26, 08-27, 08-28, 08-29, 08-31, 09-01, 09-02, 09-05, 09-06, 09-07 |
+| social / ice-breaker | 3 | 08-22, 09-04, 09-08 |
+| anti-influencer | 1 | 08-25 |
+| cities open by demand | 1 | 08-30 |
+| you approve every brand (the veto) | 1 | 09-03 |
+| **no lock-in / the escape hatch** | **1 (today)** | 09-09 |
 
-Still unused, for rotation on following days: coffee money · the ice-breaker / meeting café regulars · you approve every brand · peels off clean, zero lock-in · cities open by demand (vote with your city) · freelancer / remote-worker life · student life · café-regular identity · what counts as a verified scan · "no posting, no followers".
+The instruction to differentiate from previous days can't work when previous days aren't on `main` — each run sees an empty `marketing/` and reaches for the most obvious angle, which is the same one every time. Today's first attempt did exactly that (it was written, then discarded, before checking the open PRs). **The agent's prompt needs to tell it to read the open `marketing/*` branches, not just `marketing/queue/` on disk** — otherwise this repeats indefinitely.
 
-**Missing from today's output:** `pin.png`. The Canva design was created and exported, but the download host is blocked by the sandbox egress policy — see `pin-image-status.md`. The `image_prompt` in `pin.md` is the fallback, and the Canva design is linked for manual download.
+**2. `pin.png` has never once been produced.** All 21 days have a `pin-image-status.md` and zero have a `pin.png`. Canva's download hosts are blocked by the sandbox egress policy. Details and the one-line fix in `pin-image-status.md`.
+
+Angles still genuinely unused: coffee money / café economics · what counts as a verified scan · student life · freelancer & remote-worker life · café-regular identity · "no posting, no followers" (only glanced at on 08-25).
 
 ## c) Three things to make next
 
-1. **A "you approve every brand" pin — the objection-handler.** The single biggest silent objection to a stranger's logo on your laptop is *which* logo. The site answers it well ("It's your lid; we're just the agent") but no draft has led with it yet. Leading a pin with the veto rather than the money converts the sceptics that the earnings angle bounces off, and it's a distinct visual: a lid with a big hand-drawn ✅/❌ over two brand options.
+1. **Merge or close the backlog before making day 22.** Twenty-one unreviewed PRs is the actual bottleneck — not a shortage of drafts. Nothing here has ever reached `main`, so nothing has been published, and the agent is compounding the problem daily by writing against an empty slate. Triage the open PRs (merge the good ones, close the duplicates) and the repetition problem largely solves itself, because the next run will finally be able to see what came before.
 
-2. **A short-form video / carousel script for the peel-off moment.** Every asset so far is a static claim that the vinyl comes off clean; the proof is inherently motion. A 6-second peel with "zero residue" landing on the bare lid is the most screenshot-proof trust signal available, costs nothing but a phone, and gives Instagram and TikTok something native rather than a reposted pin. Worth scripting now so it can be shot the day the first stickers exist.
+2. **A "what counts as a verified scan" explainer pin.** Completely unused across 21 days, and it's the mechanic that makes the whole model credible: a real person, a real phone, a first scan — bots and you-in-a-mirror don't count. It answers the "surely people just spam it" objection that any sceptical reader arrives with, and it justifies why brands pay properly. Strong visual: a hand-drawn ✅/❌ tally.
 
-3. **A city-voting asset that names cities.** "Cities open in order of waitlist demand" is the one mechanic that makes signing up urgent, and it is currently buried in the FAQ. A pin built as a hand-drawn ballot — "your city opens when enough of you ask. that's the whole algorithm." — turns a passive waitlist into a vote, and the format is trivially repeatable per city once the first one opens. Keep it generic until real demand data exists; do not name a launch city or imply a ranking that hasn't happened.
+3. **A coffee-money pin priced in coffees, not currency.** The tagline "this is how I earn coffee money" is already in use but has never led a pin, and the café-economics framing sidesteps the hard rule against inventing rates — you can talk in coffees without ever claiming a number. It also targets the exact person the product needs: the café regular already sitting there five days a week.
