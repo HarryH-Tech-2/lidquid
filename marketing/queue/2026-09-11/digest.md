@@ -31,4 +31,4 @@ Note on existing assets: `assets/` already contains imagery for the coffee-money
 ## blockers / what's missing this run
 
 - **`pin.png` was not generated.** The Canva design was created and edited successfully, but this environment's egress policy denies Canva's CDN hosts (`design.canva.ai` for thumbnails, `export-download.canva.com` for exports) with a 403 at the proxy, so the exported PNG could not be downloaded into the repo. Details, plus the design links and a live export URL, are in `pin-image-status.md`. The `image_prompt` in `pin.md` remains a complete fallback.
-- No PR was opened by the agent itself — see `PR.md` for the reason and the body intended for it.
+- Nothing else. The branch pushed and the pull request opened normally (`gh` is unavailable in this environment, so the GitHub API was used instead).
