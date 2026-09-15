@@ -11,8 +11,15 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-X94FLTZWM8');
+  gtag('config', 'G-X94FLTZWM8', { page_variant: 'v2-2026-09' });
+  // Small wrapper so every conversion / funnel event goes through one place.
+  window.track = function (name, params) {
+    try { gtag('event', name, Object.assign({ page_variant: 'v2-2026-09' }, params || {})); } catch (e) {}
+  };
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Archivo:wght@500;600;700;900&display=swap">
 
 <title>Lidquid — Rent out the side of your laptop you never see.</title>
 <meta name="description" content="Lidquid rents the back of your laptop to brands. Strangers scan, you earn. Join the pilot waitlist.">
@@ -39,6 +46,23 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@graph": [
+  {
+    "@type": "Organization",
+    "@id": "https://www.lidquid.com/#org",
+    "name": "Lidquid",
+    "url": "https://www.lidquid.com/",
+    "logo": "https://www.lidquid.com/favicon.svg",
+    "description": "Lidquid rents the back of your laptop to brands. Strangers scan the QR sticker, brands pay for verified attention, and laptop owners earn per verified scan."
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://www.lidquid.com/#website",
+    "url": "https://www.lidquid.com/",
+    "name": "Lidquid",
+    "publisher": { "@id": "https://www.lidquid.com/#org" }
+  },
+  {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "How much can I actually earn?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on where your laptop lives. Each brand sets a rate per verified scan, and a lid that sits in a busy café five days a week earns far more than one that stays home. Real pilot numbers will be published once the first city has run." } },
@@ -47,13 +71,14 @@
     { "@type": "Question", "name": "What counts as a verified scan?", "acceptedAnswer": { "@type": "Answer", "text": "A real person, on a real phone, scanning your QR for the first time. Repeat scans from the same device and bots don't count." } },
     { "@type": "Question", "name": "When does my city open?", "acceptedAnswer": { "@type": "Answer", "text": "Cities open in order of waitlist demand — joining the list is the vote. Pilot spots go to the top of the list first." } },
     { "@type": "Question", "name": "Do I have to do anything once the sticker's on?", "acceptedAnswer": { "@type": "Answer", "text": "No. No posting, no follower count, no promoting. You work from your café like you already do." } },
-    { "@type": "Question", "name": "What if I want out?", "acceptedAnswer": { "@type": "Answer", "text": "Peel it off. Done. No lock-in, no minimum term, no fees. You keep everything you've earned." } }
+    { "@type": "Question", "name": "What if I want out?", "acceptedAnswer": { "@type": "Answer", "text": "Peel it off. Done. No lock-in, no minimum term, no fees. You keep everything you've earned." } },
+    { "@type": "Question", "name": "How do brands advertise on Lidquid?", "acceptedAnswer": { "@type": "Answer", "text": "Brands sponsor a batch of laptop lids in one city and pay only for verified scans, not impressions. Every owner approves the brand before the sticker ships, so the placement is welcomed rather than tolerated." } }
+  ]
+  }
   ]
 }
 </script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Archivo:wght@500;600;700;900&display=swap');
-
   :root {
     --paper: #f6f1e7;
     --ink: #1c1a17;
@@ -590,6 +615,110 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   }
+  /* blur filters are expensive on low-end phones — drop them below tablet width */
+  @media (max-width: 760px) { .blob { display: none; } }
+
+  /* ── topbar nav ── */
+  .topbar { justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; width: 100%; }
+  .logo { text-decoration: none; color: inherit; }
+  .topnav { display: flex; align-items: center; gap: 8px; }
+  .topnav a { text-decoration: none; color: var(--ink); font-weight: 700; font-size: 14px; padding: 9px 14px; border-radius: 999px; }
+  .topnav a:hover { background: #fff; }
+  .topnav a.btn {
+    background: var(--ink); color: var(--paper); border: 2.5px solid var(--ink);
+    box-shadow: 3px 3px 0 #1c1a1740; transition: transform .12s ease;
+  }
+  .topnav a.btn:hover { background: var(--ink); transform: translate(-1px,-1px); }
+  @media (max-width: 520px) { .topnav a:not(.btn) { display: none; } .logo { font-size: 32px; } .logo .dot { width: 40px; height: 40px; font-size: 18px; } }
+
+  /* ── inline form error (replaces alert) ── */
+  .form-error { display: none; margin-top: 10px; font-size: 13.5px; font-weight: 700; color: #b3261e; }
+  .form-error.show { display: block; }
+
+  /* ── city follow-up inside the success card ── */
+  .city-step { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .city-step input { flex: 1; min-width: 160px; border: 2px solid var(--teal); border-radius: 10px; padding: 9px 12px; font-size: 14px; font-family: inherit; background: #fff; }
+  .city-step button { border: 2px solid var(--teal); background: var(--teal); color: #f0fdf9; border-radius: 10px; padding: 9px 16px; font-family: inherit; font-weight: 700; font-size: 13px; cursor: pointer; white-space: nowrap; }
+  .city-step button:disabled { opacity: .6; cursor: default; }
+  .city-done { display: none; font-size: 14px; color: var(--teal); font-weight: 700; margin-top: 12px; }
+
+  /* ── earnings estimator ── */
+  .calc { margin: 48px auto 0; max-width: 680px; }
+  .calc-box {
+    background: #fffdf8; border: 3px solid var(--ink); border-radius: 22px;
+    padding: 26px 26px 22px; box-shadow: 6px 7px 0 var(--ink); text-align: left; transform: rotate(.6deg);
+  }
+  .calc-head { text-align: center; margin-bottom: 18px; }
+  .calc-head h2 { font-weight: 900; font-size: clamp(24px, 4.5vw, 32px); letter-spacing: -0.02em; }
+  .calc-head .hand { font-size: 18px; color: #8a8378; margin-top: 6px; display: block; }
+  .calc-row { display: grid; grid-template-columns: 1fr auto; gap: 6px 14px; align-items: center; margin-bottom: 16px; }
+  .calc-row label { font-weight: 800; font-size: 15px; }
+  .calc-row output { font-family: 'Gochi Hand', cursive; font-size: 22px; color: var(--teal); text-align: right; min-width: 90px; }
+  .calc-row input[type=range] { grid-column: 1 / -1; width: 100%; accent-color: var(--coral); height: 28px; cursor: pointer; }
+  .rate-chips { display: flex; gap: 8px; flex-wrap: wrap; grid-column: 1 / -1; }
+  .rate-chips button {
+    border: 2px solid var(--ink); background: #fff; border-radius: 999px; padding: 7px 14px;
+    font-family: inherit; font-weight: 800; font-size: 14px; cursor: pointer; transition: transform .15s cubic-bezier(.34,1.56,.64,1);
+  }
+  .rate-chips button[aria-pressed=true] { background: var(--sun); }
+  .rate-chips button:hover { transform: scale(1.06); }
+  .calc-out {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    border-top: 2px dashed #d8d0c2; padding-top: 16px; margin-top: 4px;
+  }
+  .calc-out .big { font-weight: 900; font-size: clamp(34px, 7vw, 52px); letter-spacing: -0.03em; line-height: 1; }
+  .calc-out .big small { font-size: 16px; font-weight: 700; letter-spacing: 0; color: #7a7367; margin-left: 6px; }
+  .calc-out .cta { padding: 12px 20px; font-size: 15px; }
+  .calc-note { font-size: 12.5px; color: #7a7367; margin-top: 12px; line-height: 1.45; }
+
+  /* ── for brands ── */
+  .brands { margin: 56px auto 0; max-width: 720px; scroll-margin-top: 20px; }
+  .brands-box {
+    background: var(--ink); color: var(--paper); border: 3px solid var(--ink); border-radius: 24px;
+    padding: 34px 30px 30px; box-shadow: 7px 8px 0 var(--sun); text-align: left; transform: rotate(-.6deg);
+  }
+  .brands-box .kicker { background: var(--sun); color: var(--ink); margin-bottom: 14px; transform: rotate(-1deg); }
+  .brands-box h2 { font-weight: 900; font-size: clamp(26px, 5vw, 38px); letter-spacing: -0.02em; line-height: 1.05; }
+  .brands-box h2 .hl { color: var(--sun); }
+  .brands-box > p { margin-top: 14px; font-size: 16px; color: #d9d2c5; max-width: 58ch; }
+  .brand-points { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin: 22px 0 6px; }
+  .brand-points li { display: flex; gap: 10px; font-size: 14.5px; line-height: 1.4; color: #f6f1e7; }
+  .brand-points li span { flex-shrink: 0; }
+  .brand-points li b { color: var(--sun); }
+  @media (max-width: 560px) { .brand-points { grid-template-columns: 1fr; } }
+  .brand-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  .brand-form input, .brand-form select {
+    border: 3px solid var(--ink); border-radius: 12px; padding: 13px 15px; font-size: 15px; font-family: inherit; background: #fff; color: var(--ink); min-width: 0; width: 100%;
+  }
+  .brand-form input:focus, .brand-form select:focus { outline: 3px solid var(--sun); outline-offset: 2px; }
+  .brand-form .full { grid-column: 1 / -1; }
+  .brand-form button.cta { grid-column: 1 / -1; background: var(--sun); color: var(--ink); }
+  @media (max-width: 560px) { .brand-form { grid-template-columns: 1fr; } }
+  .brand-form .micro { color: #a39c8f; margin-top: 4px; grid-column: 1 / -1; }
+  .brand-form .form-error { color: #ffb0a6; grid-column: 1 / -1; }
+  .brand-success { display: none; margin-top: 18px; background: #fffdf8; color: var(--ink); border: 3px solid var(--sun); border-radius: 16px; padding: 18px 20px; }
+  .brand-success .hand { font-size: 22px; color: var(--teal); }
+  .brand-success p { font-size: 14.5px; color: #4c473f; margin-top: 6px; }
+
+  /* ── bottom CTA band ── */
+  .final { margin: 60px auto 0; max-width: 680px; text-align: center; }
+  .final h2 { font-weight: 900; font-size: clamp(30px, 6vw, 46px); letter-spacing: -0.03em; line-height: 1.02; }
+  .final .hand { font-size: 20px; color: #8a8378; display: block; margin-top: 8px; }
+  .final .waitlist { margin-top: 22px; }
+
+  /* ── sticky mobile join bar ── */
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: none; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: #fffdf8f2; backdrop-filter: blur(10px); border-top: 2.5px solid var(--ink);
+    translate: 0 110%; transition: translate .3s cubic-bezier(.22,.9,.36,1);
+  }
+  .sticky-cta.show { translate: 0 0; }
+  .sticky-cta .txt { font-family: 'Gochi Hand', cursive; font-size: 17px; line-height: 1.1; color: var(--ink); }
+  .sticky-cta button.cta { padding: 12px 18px; font-size: 15px; box-shadow: 3px 3px 0 #1c1a1750; }
+  @media (max-width: 760px) { .sticky-cta { display: flex; } body.has-sticky { padding-bottom: 72px; } }
+
 </style>
 <!-- Pinterest Tag -->
 <script>
@@ -626,7 +755,13 @@ pintrk('track', 'pagevisit', {
 </div>
 
 <div class="topbar">
-  <div class="logo"><span class="dot">▣</span> Lidquid</div>
+  <a class="logo" href="/" aria-label="Lidquid home"><span class="dot">▣</span> Lidquid</a>
+  <nav class="topnav" aria-label="Page sections">
+    <a href="#how">How it works</a>
+    <a href="#calc">Earnings</a>
+    <a href="#brands" data-track="cta_click" data-loc="topnav_brands">For brands</a>
+    <a href="#email" class="btn" data-track="cta_click" data-loc="topnav_join">Join the waitlist</a>
+  </nav>
 </div>
 
 <main>
@@ -642,27 +777,32 @@ pintrk('track', 'pagevisit', {
 
       <p class="lede rise d3">Lidquid rents the back of your laptop to a brand you approve. Strangers scan the QR out of curiosity, the brand pays for real attention, and <b>you earn on every verified scan.</b></p>
 
-      <div class="waitlist rise d4">
+      <form class="waitlist rise d4" data-waitlist="hero" novalidate>
         <div class="field-row">
-          <input type="email" id="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email">
-          <input type="text" id="city" placeholder="Your city" aria-label="Your city" autocomplete="address-level2">
-          <button class="cta" id="joinBtn" onclick="joinWaitlist()">Join the waitlist</button>
+          <input type="email" id="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" inputmode="email" required>
+          <button class="cta" type="submit">Join the waitlist — it's free</button>
         </div>
-        <div class="micro">Your city decides where we launch next. No spam — one email when it opens.</div>
+        <div class="form-error" role="alert"></div>
+        <div class="micro">Free to join. One email when your city opens. Unsubscribe with one tap.</div>
 
-        <div class="success" id="success">
+        <div class="success">
           <div class="hand">You're on the list! ✌️</div>
-          <p>We open cities in order of demand, so you've just voted for yours. Want to jump the queue? <b>Every friend who joins with your link bumps you up.</b></p>
+          <p><b>One more thing — which city?</b> Cities open in order of demand, so this is your vote.</p>
+          <div class="city-step">
+            <input type="text" name="city" placeholder="Your city" aria-label="Your city" autocomplete="address-level2">
+            <button type="button" data-city-save>Save my city</button>
+          </div>
+          <div class="city-done">City saved — you've voted ✓</div>
+          <p style="margin-top:14px">Want to jump the queue? <b>Every friend who joins with your link bumps you up.</b></p>
           <div class="share-row">
-            <input type="text" id="shareLink" readonly aria-label="Your referral link">
-            <button id="copyBtn" onclick="copyShareLink()">Copy link</button>
+            <input type="text" data-share-link readonly aria-label="Your referral link">
+            <button type="button" data-copy>Copy link</button>
           </div>
         </div>
-
-      </div>
+      </form>
     </div>
 
-    <div class="how rise d4">
+    <div class="how rise d4" id="how">
       <div class="how-head">
         <h2>How it works.</h2>
         <span class="hand">four steps — none of them involve effort</span>
@@ -694,6 +834,40 @@ pintrk('track', 'pagevisit', {
         </div>
       </div>
       <div class="how-foot">no posting, no followers, no promoting — curiosity does the work ✌️</div>
+    </div>
+
+    <div class="calc rise d5" id="calc">
+      <div class="calc-head">
+        <h2>What could your lid earn?</h2>
+        <span class="hand">move the sliders — it's your café, your numbers</span>
+      </div>
+      <div class="calc-box">
+        <div class="calc-row">
+          <label for="calcDays">Days a week your laptop is out in public</label>
+          <output id="calcDaysOut">5 days</output>
+          <input type="range" id="calcDays" min="1" max="7" value="5" aria-describedby="calcDaysOut">
+        </div>
+        <div class="calc-row">
+          <label for="calcScans">Verified scans on a typical day</label>
+          <output id="calcScansOut">3 scans</output>
+          <input type="range" id="calcScans" min="1" max="12" value="3" aria-describedby="calcScansOut">
+        </div>
+        <div class="calc-row">
+          <label>Rate the brand pays you per verified scan</label>
+          <output id="calcRateOut">$0.50</output>
+          <div class="rate-chips" role="group" aria-label="Rate per verified scan">
+            <button type="button" data-rate="0.25" aria-pressed="false">$0.25</button>
+            <button type="button" data-rate="0.5" aria-pressed="true">$0.50</button>
+            <button type="button" data-rate="1" aria-pressed="false">$1.00</button>
+            <button type="button" data-rate="2" aria-pressed="false">$2.00</button>
+          </div>
+        </div>
+        <div class="calc-out">
+          <div class="big"><span id="calcMonth">$32</span><small>/ month</small></div>
+          <button class="cta" type="button" data-track="cta_click" data-loc="calc" data-scroll="#email">Claim my spot</button>
+        </div>
+        <div class="calc-note">Illustrative only. Brands set the rate per verified scan and you approve it before anything ships. We'll publish real pilot numbers once the first city has run — no made-up projections.</div>
+      </div>
     </div>
 
     <div class="wild rise d5">
@@ -733,6 +907,39 @@ pintrk('track', 'pagevisit', {
       <div class="prop"><span>✅</span>You approve every brand</div>
       <div class="prop"><span>📈</span>Earn per verified scan</div>
       <div class="prop"><span>📍</span>Best for café &amp; coworking regulars</div>
+    </div>
+
+    <div class="brands rise d6" id="brands">
+      <div class="brands-box">
+        <div class="kicker"><span class="pulse"></span> for brands</div>
+        <h2>Put your brand on the laptops your customers <span class="hl">already sit next to.</span></h2>
+        <p>Sponsor a batch of laptop lids in one city. Every sticker carries your QR, every owner has said yes to your brand, and you pay for verified scans — not impressions nobody can prove.</p>
+        <ul class="brand-points">
+          <li><span>💸</span><div><b>Pay per verified scan.</b> Deduplicated, bot-filtered, self-scans excluded.</div></li>
+          <li><span>✅</span><div><b>Owner-approved placement.</b> Welcomed on the lid, not tolerated.</div></li>
+          <li><span>📍</span><div><b>Cafés, campuses, coworking.</b> Hours of dwell time, eye level, every day.</div></li>
+          <li><span>📊</span><div><b>Raw vs billable, side by side.</b> You see what was rejected and why.</div></li>
+        </ul>
+        <form class="brand-form" data-brand-form novalidate>
+          <input type="text" name="company" placeholder="Company" aria-label="Company" autocomplete="organization" required>
+          <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" inputmode="email" required>
+          <input type="text" name="city" placeholder="Target city" aria-label="Target city" autocomplete="address-level2">
+          <select name="budget" aria-label="Monthly budget">
+            <option value="">Monthly budget</option>
+            <option value="under-1k">Under $1,000</option>
+            <option value="1k-5k">$1,000 – $5,000</option>
+            <option value="5k-plus">$5,000+</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+          <button class="cta" type="submit">Request pilot pricing</button>
+          <div class="form-error" role="alert"></div>
+          <div class="micro">Pilot pricing is per city and per verified scan. We reply within two working days.</div>
+        </form>
+        <div class="brand-success">
+          <div class="hand">Got it — talk soon 🤝</div>
+          <p>We'll reply with pilot pricing for your city within two working days. If you'd rather talk first, just reply to that email.</p>
+        </div>
+      </div>
     </div>
 
     <div class="faq rise d6">
@@ -775,18 +982,55 @@ pintrk('track', 'pagevisit', {
         <summary>What if I want out?</summary>
         <div class="a">Peel it off. Done. <b>No lock-in, no minimum term, no fees.</b> You keep everything you've earned up to that day.</div>
       </details>
+
+      <details>
+        <summary>I'm a brand — how does advertising on Lidquid work?</summary>
+        <div class="a">You sponsor a batch of laptop lids in one city and <b>pay only for verified scans</b>, not impressions. Every owner approves your brand before the sticker ships, so the placement is welcomed rather than tolerated. <a href="#brands" data-track="cta_click" data-loc="faq_brands">Request pilot pricing</a> and we'll reply within two working days.</div>
+      </details>
+    </div>
+
+    <div class="final rise d6" id="join">
+      <h2>Your lid is already out there. <br>Let it earn.</h2>
+      <span class="hand">free to join · you approve every brand · peel off any time</span>
+      <form class="waitlist" data-waitlist="bottom" novalidate>
+        <div class="field-row">
+          <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" inputmode="email" required>
+          <button class="cta" type="submit">Join the waitlist — it's free</button>
+        </div>
+        <div class="form-error" role="alert"></div>
+        <div class="micro">One email when your city opens. That's it.</div>
+        <div class="success">
+          <div class="hand">You're on the list! ✌️</div>
+          <p><b>One more thing — which city?</b> Cities open in order of demand, so this is your vote.</p>
+          <div class="city-step">
+            <input type="text" name="city" placeholder="Your city" aria-label="Your city" autocomplete="address-level2">
+            <button type="button" data-city-save>Save my city</button>
+          </div>
+          <div class="city-done">City saved — you've voted ✓</div>
+          <p style="margin-top:14px">Want to jump the queue? <b>Every friend who joins with your link bumps you up.</b></p>
+          <div class="share-row">
+            <input type="text" data-share-link readonly aria-label="Your referral link">
+            <button type="button" data-copy>Copy link</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </main>
 
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="txt">your lid could be earning ☕</div>
+  <button class="cta" type="button" data-track="cta_click" data-loc="sticky" data-scroll="#email">Join the waitlist</button>
+</div>
+
 <footer>
-  Lidquid · a tiny billboard company · <span class="hand">stickers come off clean, promises don't</span> · © 2026
+  Lidquid · a tiny billboard company · <span class="hand">stickers come off clean, promises don't</span> · <a href="#brands" style="color:inherit">for brands</a> · © 2026
 </footer>
 
 <script>
   // duplicate marquee content for a seamless loop
-  const track = document.getElementById('marqueeTrack');
-  track.innerHTML += track.innerHTML;
+  const marqueeEl = document.getElementById('marqueeTrack');
+  marqueeEl.innerHTML += marqueeEl.innerHTML;
 
   // ── in-the-wild carousel ──
   const carTrack = document.getElementById('carTrack');
@@ -907,105 +1151,228 @@ pintrk('track', 'pagevisit', {
     if (pieces.length) requestAnimationFrame(tick);
   }
 
-  // ── WAITLIST WIRING ─────────────────────────────────────────────
-  // To collect real emails: create a free form at https://formspree.io,
-  // then paste your endpoint below (looks like https://formspree.io/f/abcdwxyz).
-  // Until then, the page validates + shows success locally so you can demo it.
+  // ── WAITLIST + LEAD WIRING ──────────────────────────────────────
+  // All forms post to Formspree; every submit also fires a GA4 event so the
+  // funnel (form_start → generate_lead) is visible in Analytics.
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xljrdbro";
+  const VARIANT = 'v2-2026-09';
 
-  // ── referral tracking ──
-  // If this visit came from a friend's link, remember who sent them.
-  const referredBy = new URLSearchParams(location.search).get('ref') || "";
-  // Each signup gets their own short code (stable across visits via localStorage).
+  // ── attribution: who sent them, and which channel ──
+  const qs = new URLSearchParams(location.search);
+  const referredBy = qs.get('ref') || "";
+  const utm = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(k => { if (qs.get(k)) utm[k] = qs.get(k); });
+  // Remember first-touch attribution for people who come back later without params.
+  try {
+    if (Object.keys(utm).length || referredBy) localStorage.setItem('lidquid_attr', JSON.stringify({ ...utm, ref: referredBy, at: Date.now() }));
+  } catch (e) {}
+  function firstTouch() { try { return JSON.parse(localStorage.getItem('lidquid_attr')) || {}; } catch (e) { return {}; } }
+
   function myRefCode() {
-    let code = localStorage.getItem('lidquid_ref');
+    let code = null;
+    try { code = localStorage.getItem('lidquid_ref'); } catch (e) {}
     if (!code) {
       code = Math.random().toString(36).slice(2, 8);
-      localStorage.setItem('lidquid_ref', code);
+      try { localStorage.setItem('lidquid_ref', code); } catch (e) {}
     }
     return code;
   }
+  function shareUrl() { return location.origin + location.pathname + '?ref=' + myRefCode(); }
 
-  async function joinWaitlist() {
-    const input = document.getElementById('email');
-    const cityInput = document.getElementById('city');
-    const btn = document.getElementById('joinBtn');
-    const email = input.value.trim();
-    const city = cityInput.value.trim();
-
-    input.classList.remove('error');
-    cityInput.classList.remove('error');
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      void input.offsetWidth;
-      input.classList.add('error');
-      input.focus();
-      return;
-    }
-    if (!city) {
-      void cityInput.offsetWidth;
-      cityInput.classList.add('error');
-      cityInput.focus();
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = "Adding you…";
-
-    try {
-      if (FORMSPREE_ENDPOINT) {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({
-            email,
-            city,
-            ref_code: myRefCode(),       // their own share code
-            referred_by: referredBy,      // who sent them here (if anyone)
-            source: "lidquid-landing"
-          })
-        });
-        if (!res.ok) throw new Error("Submit failed");
-      }
-      const shareUrl = location.origin + location.pathname + '?ref=' + myRefCode();
-      document.getElementById('shareLink').value = shareUrl;
-      document.getElementById('success').style.display = 'block';
-      input.value = "";
-      cityInput.value = "";
-      btn.textContent = "You're in ✓";
-      if (window.pintrk) {
-        pintrk('load', '2613515361163', { em: email });
-        pintrk('track', 'signup', {
-          event_id: 'su-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
-          lead_type: 'waitlist'
-        });
-      }
-      burstConfetti();
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = "Join the waitlist";
-      alert("Hmm, that didn't go through — try again in a moment.");
-    }
-  }
-
-  function copyShareLink() {
-    const link = document.getElementById('shareLink');
-    const btn = document.getElementById('copyBtn');
-    navigator.clipboard.writeText(link.value).then(() => {
-      btn.textContent = "Copied ✓";
-      setTimeout(() => { btn.textContent = "Copy link"; }, 2000);
-    }).catch(() => {
-      link.select();
-      document.execCommand('copy');
-      btn.textContent = "Copied ✓";
-      setTimeout(() => { btn.textContent = "Copy link"; }, 2000);
+  async function postLead(payload) {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ ...firstTouch(), ...utm, referred_by: referredBy, page_variant: VARIANT, referrer: document.referrer || "", ...payload })
     });
+    if (!res.ok) throw new Error("Submit failed " + res.status);
+    return res;
   }
 
-  ['email', 'city'].forEach(id => {
-    document.getElementById(id).addEventListener('keydown', e => {
-      if (e.key === 'Enter') joinWaitlist();
+  const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  function showError(form, msg) {
+    const box = form.querySelector('.form-error');
+    if (box) { box.textContent = msg; box.classList.add('show'); }
+  }
+  function clearError(form) {
+    const box = form.querySelector('.form-error');
+    if (box) { box.textContent = ''; box.classList.remove('show'); }
+  }
+  function shake(input) { input.classList.remove('error'); void input.offsetWidth; input.classList.add('error'); input.focus(); }
+
+  let joined = false;
+  try { joined = localStorage.getItem('lidquid_joined') === '1'; } catch (e) {}
+
+  function markJoined(form) {
+    joined = true;
+    try { localStorage.setItem('lidquid_joined', '1'); } catch (e) {}
+    document.querySelectorAll('[data-waitlist]').forEach(f => {
+      const btn = f.querySelector('button.cta');
+      if (btn) { btn.textContent = "You're in ✓"; btn.disabled = true; }
+      f.querySelector('.field-row input').value = "";
+    });
+    form.querySelector('[data-share-link]').value = shareUrl();
+    form.querySelector('.success').style.display = 'block';
+    document.getElementById('stickyCta').classList.remove('show');
+    document.body.classList.remove('has-sticky');
+  }
+
+  // ── owner waitlist forms (hero + bottom) ──
+  document.querySelectorAll('[data-waitlist]').forEach(form => {
+    const loc = form.dataset.waitlist;
+    const input = form.querySelector('input[type=email]');
+    const btn = form.querySelector('button.cta');
+    let started = false;
+    input.addEventListener('focus', () => { if (!started) { started = true; track('form_start', { form: 'waitlist', form_location: loc }); } });
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      clearError(form);
+      const email = input.value.trim();
+      if (!emailOk(email)) { shake(input); showError(form, "That email doesn't look right — try again?"); return; }
+      btn.disabled = true;
+      btn.textContent = "Adding you…";
+      track('waitlist_submit', { form_location: loc });
+      try {
+        await postLead({ email, ref_code: myRefCode(), source: "lidquid-landing", lead_type: "waitlist", form_location: loc });
+        // GA4 conversion — mark generate_lead as a key event in GA4 Admin.
+        track('generate_lead', { lead_type: 'waitlist', form_location: loc, referred: referredBy ? 'yes' : 'no', currency: 'USD', value: 1 });
+        if (window.pintrk) {
+          pintrk('load', '2613515361163', { em: email });
+          pintrk('track', 'signup', { event_id: 'su-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8), lead_type: 'waitlist' });
+        }
+        form.dataset.email = email;
+        markJoined(form);
+        burstConfetti();
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = "Join the waitlist — it's free";
+        showError(form, "Hmm, that didn't go through — try again in a moment.");
+        track('form_error', { form: 'waitlist', form_location: loc, message: String(err && err.message || err).slice(0, 80) });
+      }
+    });
+
+    // city follow-up (step 2)
+    const cityBtn = form.querySelector('[data-city-save]');
+    const cityInput = form.querySelector('.city-step input');
+    cityBtn.addEventListener('click', async () => {
+      const city = cityInput.value.trim();
+      if (!city) { shake(cityInput); return; }
+      cityBtn.disabled = true; cityBtn.textContent = "Saving…";
+      try {
+        await postLead({ email: form.dataset.email || "", city, ref_code: myRefCode(), source: "lidquid-landing", lead_type: "waitlist-city", form_location: loc });
+        track('waitlist_city', { form_location: loc, city });
+        form.querySelector('.city-step').style.display = 'none';
+        form.querySelector('.city-done').style.display = 'block';
+      } catch (err) {
+        cityBtn.disabled = false; cityBtn.textContent = "Save my city";
+      }
+    });
+    cityInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); cityBtn.click(); } });
+
+    // share link copy
+    const copyBtn = form.querySelector('[data-copy]');
+    copyBtn.addEventListener('click', () => {
+      const link = form.querySelector('[data-share-link]');
+      const done = () => { copyBtn.textContent = "Copied ✓"; setTimeout(() => { copyBtn.textContent = "Copy link"; }, 2000); track('share', { method: 'copy_link', content_type: 'referral' }); };
+      navigator.clipboard.writeText(link.value).then(done).catch(() => { link.select(); document.execCommand('copy'); done(); });
     });
   });
+
+  // returning visitor who already joined: show the share card, not the form
+  if (joined) {
+    const hero = document.querySelector('[data-waitlist="hero"]');
+    hero.querySelector('[data-share-link]').value = shareUrl();
+    hero.querySelector('.success').style.display = 'block';
+    hero.querySelector('.city-step').style.display = 'none';
+    document.querySelectorAll('[data-waitlist] button.cta').forEach(b => { b.textContent = "You're in ✓"; b.disabled = true; });
+  }
+
+  // ── brand lead form ──
+  (function () {
+    const form = document.querySelector('[data-brand-form]');
+    if (!form) return;
+    const btn = form.querySelector('button.cta');
+    let started = false;
+    form.querySelectorAll('input, select').forEach(el => el.addEventListener('focus', () => { if (!started) { started = true; track('form_start', { form: 'brand' }); } }));
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      clearError(form);
+      const data = Object.fromEntries(new FormData(form));
+      if (!data.company.trim()) { shake(form.company); showError(form, "What's the company called?"); return; }
+      if (!emailOk(data.email.trim())) { shake(form.email); showError(form, "Please use a valid work email."); return; }
+      btn.disabled = true; btn.textContent = "Sending…";
+      track('brand_submit', { budget: data.budget || 'unset' });
+      try {
+        await postLead({ ...data, source: "lidquid-landing", lead_type: "brand", _subject: "Lidquid brand pilot enquiry: " + data.company });
+        track('generate_lead', { lead_type: 'brand', budget: data.budget || 'unset', currency: 'USD', value: 50 });
+        if (window.pintrk) pintrk('track', 'lead', { event_id: 'ld-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8), lead_type: 'brand' });
+        form.style.display = 'none';
+        document.querySelector('.brand-success').style.display = 'block';
+      } catch (err) {
+        btn.disabled = false; btn.textContent = "Request pilot pricing";
+        showError(form, "That didn't send — try again in a moment.");
+        track('form_error', { form: 'brand', message: String(err && err.message || err).slice(0, 80) });
+      }
+    });
+  })();
+
+  // ── earnings estimator ──
+  (function () {
+    const days = document.getElementById('calcDays');
+    const scans = document.getElementById('calcScans');
+    const out = document.getElementById('calcMonth');
+    let rate = 0.5, used = false;
+    function update(src) {
+      document.getElementById('calcDaysOut').textContent = days.value + (days.value == 1 ? ' day' : ' days');
+      document.getElementById('calcScansOut').textContent = scans.value + (scans.value == 1 ? ' scan' : ' scans');
+      document.getElementById('calcRateOut').textContent = '$' + rate.toFixed(2);
+      const month = days.value * 4.33 * scans.value * rate;
+      out.textContent = '$' + Math.round(month);
+      if (src && !used) { used = true; track('calc_use', { control: src }); }
+    }
+    days.addEventListener('input', () => update('days'));
+    scans.addEventListener('input', () => update('scans'));
+    document.querySelectorAll('.rate-chips button').forEach(b => b.addEventListener('click', () => {
+      rate = parseFloat(b.dataset.rate);
+      document.querySelectorAll('.rate-chips button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+      update('rate');
+    }));
+    update();
+  })();
+
+  // ── CTA clicks + smooth scroll to the hero form ──
+  document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => {
+    track(el.dataset.track, { location: el.dataset.loc || '' });
+    if (el.dataset.scroll) {
+      const target = document.querySelector(el.dataset.scroll);
+      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => target.focus({ preventScroll: true }), 450); }
+    }
+  }));
+
+  // ── sticky mobile bar: appears once the hero form has scrolled away ──
+  (function () {
+    const bar = document.getElementById('stickyCta');
+    const hero = document.querySelector('[data-waitlist="hero"]');
+    const bottom = document.querySelector('[data-waitlist="bottom"]');
+    if (!('IntersectionObserver' in window) || joined) return;
+    const visible = { hero: true, bottom: false };
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { visible[en.target === hero ? 'hero' : 'bottom'] = en.isIntersecting; });
+      const show = !visible.hero && !visible.bottom && !joined;
+      bar.classList.toggle('show', show);
+      bar.setAttribute('aria-hidden', String(!show));
+      document.body.classList.toggle('has-sticky', show);
+    }, { threshold: 0.1 });
+    io.observe(hero); io.observe(bottom);
+  })();
+
+  // ── engagement signals: carousel + FAQ ──
+  document.getElementById('carPrev').addEventListener('click', () => track('carousel_nav', { direction: 'prev' }));
+  document.getElementById('carNext').addEventListener('click', () => track('carousel_nav', { direction: 'next' }));
+  document.querySelectorAll('.faq details').forEach(d => d.addEventListener('toggle', () => {
+    if (d.open) track('faq_open', { question: d.querySelector('summary').textContent.trim().slice(0, 60) });
+  }));
 
   // ── FAQ: smooth open/close for <details> ──
   (function () {
