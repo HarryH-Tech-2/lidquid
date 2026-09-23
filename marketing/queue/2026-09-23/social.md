@@ -4,7 +4,7 @@
 
 ---
 
-## X / Threads (216 chars)
+## X / Threads (217 chars)
 
 the back of your laptop is the only screen you never look at. so we rent it out — removable QR sticker, brand you approve, $ per verified scan. you just sit in the café like normal.
 https://lidquid.com/?ref=x-20260923
