@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Archivo:wght@500;600;700;900&display=swap">
 
-<title>Lidquid — Rent out the side of your laptop you never see.</title>
-<meta name="description" content="Lidquid rents the back of your laptop to brands. Strangers scan, you earn. Join the pilot waitlist.">
+<title>Lidquid — Get Paid to Advertise on Your Laptop Lid</title>
+<meta name="description" content="Put a removable QR sticker for a brand you approve on your laptop. Strangers scan it, you earn per verified scan. Free, no followers needed. Join the pilot.">
 
 <!-- social share cards -->
 <meta property="og:type" content="website">
@@ -72,6 +72,7 @@
     { "@type": "Question", "name": "When does my city open?", "acceptedAnswer": { "@type": "Answer", "text": "Cities open in order of waitlist demand — joining the list is the vote. Pilot spots go to the top of the list first." } },
     { "@type": "Question", "name": "Do I have to do anything once the sticker's on?", "acceptedAnswer": { "@type": "Answer", "text": "No. No posting, no follower count, no promoting. You work from your café like you already do." } },
     { "@type": "Question", "name": "What if I want out?", "acceptedAnswer": { "@type": "Answer", "text": "Peel it off. Done. No lock-in, no minimum term, no fees. You keep everything you've earned." } },
+    { "@type": "Question", "name": "Is Lidquid legit or a scam?", "acceptedAnswer": { "@type": "Answer", "text": "Lidquid never charges laptop owners anything and never asks them to send or forward money. Owners see the brand, the sticker design and the rate per scan before anything ships. Programs that ask for an upfront fee, or ask you to cash a cheque and send part of it back, are scams." } },
     { "@type": "Question", "name": "How do brands advertise on Lidquid?", "acceptedAnswer": { "@type": "Answer", "text": "Brands sponsor a batch of laptop lids in one city and pay only for verified scans, not impressions. Every owner approves the brand before the sticker ships, so the placement is welcomed rather than tolerated." } }
   ]
   }
@@ -228,6 +229,45 @@
 
   .lede { margin: 20px auto 0; font-size: 18px; color: #4c473f; max-width: 58ch; }
   .lede b { color: var(--ink); }
+
+  /* ── hero photo: polaroid of a real scan ── */
+  .hero-shot {
+    position: relative;
+    max-width: 330px;
+    margin: 38px auto 0;
+    background: #fffdf8;
+    border: 3px solid var(--ink);
+    border-radius: 20px;
+    padding: 10px 10px 0;
+    box-shadow: 8px 8px 0 var(--ink);
+    rotate: 2deg;
+  }
+  @media (max-width: 1079px) { .hero-shot { max-width: 290px; } }
+  .hero-shot img { display: block; width: 100%; height: auto; aspect-ratio: 920 / 1150; object-fit: cover; border-radius: 12px; border: 2px solid var(--ink); }
+  .hero-shot figcaption { font-size: 19px; color: var(--teal); text-align: center; padding: 8px 0 10px; }
+  .shot-stamp {
+    position: absolute; top: 26px; left: -18px;
+    background: var(--sun); border: 2.5px solid var(--ink); border-radius: 999px;
+    padding: 6px 14px; font-weight: 800; font-size: 14px;
+    box-shadow: 3px 3px 0 var(--ink);
+    rotate: -7deg;
+    animation: bob 4.5s ease-in-out infinite;
+  }
+  @media (min-width: 1080px) {
+    .hero {
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center;
+      /* break out of the 780px column so text and photo sit side by side */
+      width: min(1120px, calc(100vw - 48px));
+      margin-left: calc(50% - min(560px, 50vw - 24px));
+      text-align: left;
+    }
+    .hero .lede { margin-left: 0; }
+    .hero .waitlist { margin-left: 0; }
+    .hero-shot { max-width: 400px; margin: 0 0 0 auto; }
+    .doodle.a { top: -2px; left: 390px; }
+    .doodle.b { top: -40px; right: auto; left: 52%; }
+    .doodle.c { bottom: -24px; left: 4%; }
+  }
 
   /* ── how it works ── */
   .how {
@@ -608,6 +648,20 @@
 
   footer { border-top: 2px dashed #d8d0c2; padding: 22px; text-align: center; font-size: 12.5px; color: #8a8378; }
   footer .hand { color: var(--teal); }
+  .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-bottom: 14px; font-size: 13.5px; }
+  .foot-links a { color: #5e584e; font-weight: 600; text-decoration: none; }
+  .foot-links a:hover { text-decoration: underline; }
+
+  /* ── guide teasers ── */
+  .reads { margin: 56px auto 0; max-width: 780px; }
+  .reads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
+  @media (max-width: 560px) { .reads-grid { grid-template-columns: 1fr; } }
+  .read { display: flex; gap: 12px; align-items: center; background: #fffdf8; border: 2.5px solid var(--ink); border-radius: 16px; padding: 14px 16px; color: var(--ink); text-decoration: none; box-shadow: 4px 4px 0 #1c1a1726; transition: transform .15s ease, box-shadow .15s ease; }
+  .read:hover { transform: translate(-2px,-2px) rotate(-.4deg); box-shadow: 6px 6px 0 var(--ink); }
+  .read span { font-size: 26px; }
+  .read b { font-size: 16px; line-height: 1.3; }
+  .reads-more { margin-top: 14px; font-weight: 700; }
+  .reads-more a { color: var(--teal); }
 
   /* confetti canvas */
   #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 100; }
@@ -759,6 +813,7 @@ pintrk('track', 'pagevisit', {
   <nav class="topnav" aria-label="Page sections">
     <a href="#how">How it works</a>
     <a href="#calc">Earnings</a>
+    <a href="/guides" data-track="cta_click" data-loc="topnav_guides">Guides</a>
     <a href="#brands" data-track="cta_click" data-loc="topnav_brands">For brands</a>
     <a href="#email" class="btn" data-track="cta_click" data-loc="topnav_join">Join the waitlist</a>
   </nav>
@@ -771,6 +826,7 @@ pintrk('track', 'pagevisit', {
       <div class="doodle b">comes off clean</div>
       <div class="doodle c">you pick the brand</div>
 
+      <div class="hero-copy">
       <div class="kicker rise d1"><span class="pulse"></span> Pilot · 50 laptops · one city at a time</div>
 
       <h1 class="rise d2">Turn your laptop lid into <span class="u">income.</span></h1>
@@ -800,6 +856,13 @@ pintrk('track', 'pagevisit', {
           </div>
         </div>
       </form>
+      </div>
+
+      <figure class="hero-shot rise d3">
+        <img src="assets/sticker-in-the-wild.webp" alt="In a café, a woman scans the Lidquid QR sticker on the back of a stranger's laptop with her phone." width="920" height="1150" fetchpriority="high" decoding="async">
+        <span class="shot-stamp">+1 verified scan ✓</span>
+        <figcaption class="hand">a normal tuesday at the café ☕</figcaption>
+      </figure>
     </div>
 
     <div class="how rise d4" id="how">
@@ -984,10 +1047,29 @@ pintrk('track', 'pagevisit', {
       </details>
 
       <details>
+        <summary>Is this legit? It sounds like a car wrap scam.</summary>
+        <div class="a">Fair worry. The scams ask <b>you</b> for money — a fee, or "cash this cheque and send some back." Lidquid never charges owners anything and never asks you to move money; you see the brand and rate before anything ships. <a href="/guides/is-laptop-sticker-advertising-legit">Here's the full red-flag checklist.</a></div>
+      </details>
+
+      <details>
         <summary>I'm a brand — how does advertising on Lidquid work?</summary>
         <div class="a">You sponsor a batch of laptop lids in one city and <b>pay only for verified scans</b>, not impressions. Every owner approves your brand before the sticker ships, so the placement is welcomed rather than tolerated. <a href="#brands" data-track="cta_click" data-loc="faq_brands">Request pilot pricing</a> and we'll reply within two working days.</div>
       </details>
     </div>
+
+    <section class="reads" aria-labelledby="reads-h">
+      <div class="faq-head">
+        <h2 id="reads-h">Still deciding?</h2>
+        <span class="hand">straight answers, no hype</span>
+      </div>
+      <div class="reads-grid">
+        <a class="read" href="/guides/get-paid-to-put-a-sticker-on-your-laptop" data-track="cta_click" data-loc="reads_get_paid"><span>🤔</span><b>Can you really get paid to put a sticker on your laptop?</b></a>
+        <a class="read" href="/guides/how-much-can-you-earn-from-laptop-advertising" data-track="cta_click" data-loc="reads_earn"><span>💸</span><b>How much does laptop advertising actually earn?</b></a>
+        <a class="read" href="/guides/is-laptop-sticker-advertising-legit" data-track="cta_click" data-loc="reads_legit"><span>🕵️</span><b>Is it legit? How to spot a sticker scam</b></a>
+        <a class="read" href="/guides/laptop-sticker-advertising" data-track="cta_click" data-loc="reads_brands"><span>📣</span><b>For brands: how laptop lid ads work</b></a>
+      </div>
+      <p class="reads-more"><a href="/guides">Browse all guides →</a></p>
+    </section>
 
     <div class="final rise d6" id="join">
       <h2>Your lid is already out there. <br>Let it earn.</h2>
@@ -1024,6 +1106,15 @@ pintrk('track', 'pagevisit', {
 </div>
 
 <footer>
+  <nav class="foot-links" aria-label="Guides">
+    <a href="/guides">All guides</a>
+    <a href="/guides/get-paid-to-put-a-sticker-on-your-laptop">Get paid for a laptop sticker</a>
+    <a href="/guides/how-much-can-you-earn-from-laptop-advertising">Earnings explained</a>
+    <a href="/guides/is-laptop-sticker-advertising-legit">Is it legit?</a>
+    <a href="/guides/what-is-a-verified-scan">Verified scans</a>
+    <a href="/guides/laptop-sticker-advertising">Laptop advertising for brands</a>
+    <a href="/guides/cost-per-scan-advertising">Cost per scan</a>
+  </nav>
   Lidquid · a tiny billboard company · <span class="hand">stickers come off clean, promises don't</span> · <a href="#brands" style="color:inherit">for brands</a> · © 2026
 </footer>
 

@@ -1,0 +1,7 @@
+# Source/tooling kept in git for the build + marketing routine, not served on lidquid.com
+build-guides.js
+content/
+scripts/
+marketing/
+package.json
+*.md
