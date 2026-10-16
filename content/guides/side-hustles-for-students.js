@@ -2,13 +2,14 @@ module.exports = {
   slug: "side-hustles-for-students",
   order: 7,
   audience: "owner",
+  section: "income",
   nav: "Side hustles for students",
   title: "10 Low-Effort Side Hustles for Students in 2026",
   h1: "Low-effort side hustles for students in 2026",
   description: "Ten honest side hustles that fit around classes: what each involves, how much effort it takes, how flexible it is, and what to watch out for.",
   published: "2026-10-16",
   about: ["student side hustles", "passive income for students", "part-time work"],
-  related: ["get-paid-to-put-a-sticker-on-your-laptop", "make-money-working-from-cafes", "is-laptop-sticker-advertising-legit"],
+  related: ["get-paid-to-put-a-sticker-on-your-laptop", "make-money-working-from-cafes", "is-laptop-sticker-advertising-legit", "passive-income-for-college-students"],
   answer: `
     <p>The best side hustles for students fit around a timetable that changes every semester. Good low-effort options include tutoring, on-campus jobs, paid research studies, user testing, pet sitting, reselling, freelancing and laptop sticker advertising. The easiest pick depends on whether you're trading time (tutoring, campus jobs) or using something you already do (studying in public, owning a laptop).</p>`,
   body: `

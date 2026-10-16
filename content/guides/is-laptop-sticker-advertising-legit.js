@@ -8,7 +8,7 @@ module.exports = {
   description: "Laptop sticker advertising can be legit, but scams copy the car wrap playbook. Here are the red flags, questions to ask and what a real program looks like.",
   published: "2026-10-16",
   about: ["laptop sticker advertising", "advertising scams", "car wrap scam"],
-  related: ["get-paid-to-put-a-sticker-on-your-laptop", "laptop-sticker-advertising-vs-car-wrap", "what-is-a-verified-scan"],
+  related: ["get-paid-to-put-a-sticker-on-your-laptop", "laptop-sticker-advertising-vs-car-wrap", "what-is-a-verified-scan", "passive-income-scams"],
   answer: `
     <p><b>Laptop sticker advertising can be completely legitimate, but the idea is easy to fake.</b> The test is simple: a real program pays you and never asks you to pay, cash a cheque or move money. If anyone asks for a fee, sends a cheque and wants part of it back, or won't name the brand, walk away.</p>
     <ul>

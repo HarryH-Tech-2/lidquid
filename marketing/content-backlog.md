@@ -12,7 +12,7 @@ The Monday routine takes the top unchecked item. Each one is a question people a
 - [ ] `measure-offline-advertising` (brand): how to measure offline ads with QR codes and UTM links
 - [ ] `best-places-to-work-with-a-laptop` (owner): where to work with a laptop besides home: cafés, libraries, coworking, hotels
 - [ ] `is-it-rude-to-work-in-a-cafe` (owner): café laptop etiquette: how long can you stay?
-- [ ] `passive-income-ideas-no-money` (owner): passive income ideas that need no money up front (honest list)
+- [x] `passive-income-ideas-with-no-money` (owner): passive income ideas that need no money up front (honest list), done 2026-10-16
 - [ ] `student-marketing-on-a-budget` (brand): how to market to college students on a small budget
 - [ ] `do-people-scan-qr-codes` (brand): do people actually scan QR codes in 2026? What makes them scan
 - [ ] `lidquid-faq` (owner): Lidquid explained: every question answered in one place

@@ -27,6 +27,11 @@ const guides = fs.readdirSync(contentDir)
   .map(f => require(path.join(contentDir, f)))
   .sort((a, b) => (a.order || 99) - (b.order || 99));
 
+const kind = g => g.audience === "brand" ? "brand" : g.section === "income" ? "income" : "owner";
+const tagLabel = { owner: "For owners", income: "Passive income", brand: "For brands" };
+const tagLong = { owner: "For laptop owners", income: "Passive income & side hustles", brand: "For brands" };
+const tagSpan = g => `<span class="tag ${kind(g)}">${tagLabel[kind(g)]}</span>`;
+const inGroup = k => guides.filter(g => kind(g) === k);
 const bySlug = Object.fromEntries(guides.map(g => [g.slug, g]));
 for (const g of guides) {
   for (const k of ["slug", "title", "h1", "description", "answer", "body", "published", "audience"]) {
@@ -102,7 +107,11 @@ const footer = `<footer class="site-footer">
     </div>
     <div>
       <h2>For laptop owners</h2>
-      <ul>${guides.filter(g => g.audience === "owner").map(g => `<li><a href="/guides/${g.slug}">${esc(g.nav || g.h1)}</a></li>`).join("")}</ul>
+      <ul>${inGroup("owner").map(g => `<li><a href="/guides/${g.slug}">${esc(g.nav || g.h1)}</a></li>`).join("")}</ul>
+    </div>
+    <div>
+      <h2>Passive income</h2>
+      <ul>${inGroup("income").map(g => `<li><a href="/guides/${g.slug}">${esc(g.nav || g.h1)}</a></li>`).join("")}</ul>
     </div>
     <div>
       <h2>For brands</h2>
@@ -201,7 +210,7 @@ ${topbar}
 <main id="content">
   <article class="guide">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Lidquid</a> <span>/</span> <a href="/guides">Guides</a> <span>/</span> <span aria-current="page">${esc(g.nav || g.h1)}</span></nav>
-    <div class="tag ${g.audience}">${g.audience === "brand" ? "For brands" : "For laptop owners"}</div>
+    <div class="tag ${kind(g)}">${tagLong[kind(g)]}</div>
     <h1>${esc(g.h1)}</h1>
     <p class="byline">By the Lidquid team · Updated <time datetime="${updated}">${fmtDate(updated)}</time> · ${Math.max(2, Math.round(words(g.body) / 230))} min read</p>
     <section class="answer" aria-label="Short answer">
@@ -215,7 +224,7 @@ ${body}
     </div>
     ${faqs.length ? `<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">Questions people ask</h2>${faqs.map(f => `<details><summary>${esc(f.q)}</summary><div>${f.a}</div></details>`).join("")}</section>` : ""}
     ${cta("end")}
-    ${related.length ? `<section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Keep reading</h2><div class="rel-grid">${related.map(r => `<a class="rel" href="/guides/${r.slug}"><span class="tag ${r.audience}">${r.audience === "brand" ? "For brands" : "For owners"}</span><b>${esc(r.h1)}</b><span>${esc(r.description)}</span></a>`).join("")}</div></section>` : ""}
+    ${related.length ? `<section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Keep reading</h2><div class="rel-grid">${related.map(r => `<a class="rel" href="/guides/${r.slug}">${tagSpan(r)}<b>${esc(r.h1)}</b><span>${esc(r.description)}</span></a>`).join("")}</div></section>` : ""}
   </article>
 </main>
 ${footer}
@@ -226,8 +235,8 @@ ${footer}
 
 function hubPage() {
   const url = `${site}/guides`;
-  const title = "Laptop Sticker Advertising Guides | Lidquid";
-  const description = "Straight answers on getting paid to put a sticker on your laptop, what it earns, how to spot scams, and how brands buy laptop ad space per verified scan.";
+  const title = "Laptop Advertising & Passive Income Guides | Lidquid";
+  const description = "Honest guides to passive income, side hustles and getting paid to put a sticker on your laptop, plus how brands buy laptop ad space per verified scan.";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -236,7 +245,7 @@ function hubPage() {
       { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Lidquid", item: site + "/" }, { "@type": "ListItem", position: 2, name: "Guides", item: url }] }
     ]
   };
-  const card = g => `<a class="rel" href="/guides/${g.slug}"><span class="tag ${g.audience}">${g.audience === "brand" ? "For brands" : "For owners"}</span><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`;
+  const card = g => `<a class="rel" href="/guides/${g.slug}">${tagSpan(g)}<b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`;
   return `${head({ title, description, url, ogType: "website", schema })}
 <body data-guide="hub" data-audience="owner">
 <a class="skip" href="#content">Skip to content</a>
@@ -247,7 +256,9 @@ ${topbar}
     <h1>Your laptop lid is ad space. <span class="u">Here's how it works.</span></h1>
     <p class="lede">Honest answers about getting paid to put a sticker on your laptop: what it really earns, what to watch out for, and how brands use it to reach people in cafés, campuses and coworking spaces.</p>
     <h2 class="sec">For laptop owners</h2>
-    <div class="rel-grid">${guides.filter(g => g.audience === "owner").map(card).join("")}</div>
+    <div class="rel-grid">${inGroup("owner").map(card).join("")}</div>
+    <h2 class="sec" id="passive-income">Passive income &amp; side hustles</h2>
+    <div class="rel-grid">${inGroup("income").map(card).join("")}</div>
     <h2 class="sec">For brands</h2>
     <div class="rel-grid">${guides.filter(g => g.audience === "brand").map(card).join("")}</div>
     ${ownerCta("end", "Ready when your city is")}
@@ -305,7 +316,7 @@ ${topbar}
     <div class="hand kick">peeled off clean</div>
     <h1>This page isn't here.</h1>
     <p class="lede">The link may be old. Try the <a href="/">homepage</a> or one of these guides.</p>
-    <div class="rel-grid">${guides.slice(0, 6).map(g => `<a class="rel" href="/guides/${g.slug}"><span class="tag ${g.audience}">${g.audience === "brand" ? "For brands" : "For owners"}</span><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`).join("")}</div>
+    <div class="rel-grid">${guides.slice(0, 6).map(g => `<a class="rel" href="/guides/${g.slug}">${tagSpan(g)}<b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`).join("")}</div>
   </div>
 </main>
 ${footer}
@@ -329,7 +340,10 @@ Key facts:
 - [Guides hub](${site}/guides)
 
 ## Guides for laptop owners
-${guides.filter(g => g.audience === "owner").map(g => `- [${g.h1}](${site}/guides/${g.slug}): ${g.description}`).join("\n")}
+${inGroup("owner").map(g => `- [${g.h1}](${site}/guides/${g.slug}): ${g.description}`).join("\n")}
+
+## Passive income and side hustles
+${inGroup("income").map(g => `- [${g.h1}](${site}/guides/${g.slug}): ${g.description}`).join("\n")}
 
 ## Guides for brands
 ${guides.filter(g => g.audience === "brand").map(g => `- [${g.h1}](${site}/guides/${g.slug}): ${g.description}`).join("\n")}

@@ -9,7 +9,7 @@ module.exports = {
   image: {"src":"/assets/wild-cafe-scan.jpg","w":920,"h":920,"alt":"A phone scanning a Lidquid QR sticker on a laptop lid in a café.","caption":"café days are scan days"},
   published: "2026-10-16",
   about: ["laptop sticker advertising", "side hustle earnings", "passive income"],
-  related: ["get-paid-to-put-a-sticker-on-your-laptop", "what-is-a-verified-scan", "make-money-working-from-cafes"],
+  related: ["get-paid-to-put-a-sticker-on-your-laptop", "what-is-a-verified-scan", "make-money-working-from-cafes", "passive-income-vs-side-hustle"],
   answer: `
     <p><b>It depends almost entirely on how often your laptop is open in busy public places.</b> Lidquid pays per verified scan at a rate the brand sets. A laptop that's out five days a week and gets three new scans a day at $0.50 makes roughly <b>$32 a month</b>. A laptop that never leaves home makes close to nothing.</p>
     <ul>

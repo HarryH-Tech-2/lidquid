@@ -9,7 +9,7 @@ module.exports = {
   image: {"src":"/assets/sticker-in-the-wild.webp","w":920,"h":1150,"alt":"A woman in a café scans the QR sticker on the back of a stranger's laptop with her phone.","caption":"one scan, one verified visit"},
   published: "2026-10-16",
   about: ["laptop sticker advertising", "side hustle", "passive income"],
-  related: ["how-much-can-you-earn-from-laptop-advertising", "is-laptop-sticker-advertising-legit", "laptop-sticker-advertising-vs-car-wrap"],
+  related: ["how-much-can-you-earn-from-laptop-advertising", "is-laptop-sticker-advertising-legit", "laptop-sticker-advertising-vs-car-wrap", "passive-income-from-things-you-already-own"],
   answer: `
     <p><b>Yes.</b> Brands will pay to put a sticker on the back of your laptop because people in cafés, libraries, campuses and coworking spaces look at it all day. With Lidquid you stick on a removable QR sticker for a brand you approve, and you earn every time a new person scans it.</p>
     <ul>

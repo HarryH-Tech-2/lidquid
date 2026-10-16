@@ -2,13 +2,14 @@ module.exports = {
   slug: "make-money-working-from-cafes",
   order: 8,
   audience: "owner",
+  section: "income",
   nav: "Make money working from cafés",
   title: "How to Make Money While Working From a Café (2026)",
   h1: "How to make money while working from a café",
   description: "Remote workers and freelancers spend hours in cafés. Here's how to make that time pay: laptop ads, smarter spending, coworking math and local gigs.",
   published: "2026-10-16",
   about: ["remote work", "digital nomads", "café working", "freelancing"],
-  related: ["get-paid-to-put-a-sticker-on-your-laptop", "side-hustles-for-students", "how-much-can-you-earn-from-laptop-advertising"],
+  related: ["get-paid-to-put-a-sticker-on-your-laptop", "side-hustles-for-students", "how-much-can-you-earn-from-laptop-advertising", "passive-income-from-things-you-already-own"],
   answer: `
     <p>If you work from cafés, you can make that time pay in four ways. You can rent the back of your laptop to a brand with a QR sticker, cut what you spend per hour of café work, compare it honestly with a coworking day pass, and treat the café as a place to find local freelance clients. None of them asks you to work more hours.</p>`,
   body: `
