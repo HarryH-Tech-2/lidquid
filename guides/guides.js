@@ -74,6 +74,7 @@
 
   document.querySelectorAll("[data-brand-form]").forEach(form => {
     const loc = "guide:" + form.dataset.brandForm;
+    const leadType = form.dataset.lead || "brand";
     const btn = form.querySelector("button.cta");
     let started = false;
     form.querySelectorAll("input").forEach(el => el.addEventListener("focus", () => { if (!started) { started = true; t("form_start", { form: "brand", form_location: loc }); } }));
@@ -86,13 +87,13 @@
       btn.disabled = true; btn.textContent = "Sending…";
       t("brand_submit", { form_location: loc });
       try {
-        await postLead({ ...data, source: "lidquid-guide", lead_type: "brand", form_location: loc, _subject: "Lidquid brand pilot enquiry: " + data.company });
-        t("generate_lead", { lead_type: "brand", form_location: loc, currency: "USD", value: 50 });
+        await postLead({ ...data, source: "lidquid-guide", lead_type: leadType, form_location: loc, _subject: (leadType === "press" ? "Lidquid PRESS inquiry: " : "Lidquid brand pilot enquiry: ") + data.company });
+        t("generate_lead", { lead_type: leadType, form_location: loc, currency: "USD", value: leadType === "press" ? 25 : 50 });
         if (window.pintrk) pintrk("track", "lead", { event_id: eventId("ld"), lead_type: "brand" });
         form.hidden = true;
         form.parentElement.querySelector(".brand-success").hidden = false;
       } catch (err) {
-        btn.disabled = false; btn.textContent = "Request pilot pricing";
+        btn.disabled = false; btn.textContent = leadType === "press" ? "Send inquiry" : "Request pilot pricing";
         fail(form, null, "That didn't send — try again in a moment.");
         t("form_error", { form: "brand", form_location: loc, message: String(err && err.message || err).slice(0, 80) });
       }

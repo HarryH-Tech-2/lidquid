@@ -118,7 +118,7 @@ const footer = `<footer class="site-footer">
       <ul>${guides.filter(g => g.audience === "brand").map(g => `<li><a href="/guides/${g.slug}">${esc(g.nav || g.h1)}</a></li>`).join("")}<li><a href="/#brands">Request pilot pricing</a></li></ul>
     </div>
   </div>
-  <p class="fine">© 2026 Lidquid · a tiny billboard company · <span class="hand">stickers come off clean, promises don't</span></p>
+  <p class="fine"><a href="/press">Press</a> · © 2026 Lidquid · a tiny billboard company · <span class="hand">stickers come off clean, promises don't</span></p>
 </footer>
 <script src="/guides/guides.js" defer></script>`;
 
@@ -277,6 +277,7 @@ const today = new Date().toISOString().slice(0, 10);
 const urls = [
   { loc: `${site}/`, lastmod: today, priority: "1.0" },
   { loc: `${site}/guides`, lastmod: today, priority: "0.8" },
+  { loc: `${site}/press`, lastmod: today, priority: "0.5" },
   ...guides.map(g => ({ loc: `${site}/guides/${g.slug}`, lastmod: g.updated || g.published, priority: "0.7" }))
 ];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
@@ -318,6 +319,76 @@ ${topbar}
     <p class="lede">The link may be old. Try the <a href="/">homepage</a> or one of these guides.</p>
     <div class="rel-grid">${guides.slice(0, 6).map(g => `<a class="rel" href="/guides/${g.slug}">${tagSpan(g)}<b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`).join("")}</div>
   </div>
+</main>
+${footer}
+</body>
+</html>
+`);
+
+// /press: fact sheet, images and a press inquiry form, so journalists can cover and link Lidquid.
+write("press/index.html", `${head({ title: "Press Kit | Lidquid", description: "Lidquid press kit: what Lidquid is, where the pilot stands, key facts, photos and logo, and a direct line for interview and story requests.", url: `${site}/press`, ogType: "website", schema: { "@context": "https://schema.org", "@type": "WebPage", name: "Lidquid press kit", url: `${site}/press`, about: { "@id": `${site}/#org` } } })}
+<body data-guide="press" data-audience="owner">
+<a class="skip" href="#content">Skip to content</a>
+${topbar}
+<main id="content">
+  <article class="guide">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Lidquid</a> <span>/</span> <span aria-current="page">Press</span></nav>
+    <div class="tag owner">Press kit</div>
+    <h1>Lidquid, for journalists</h1>
+    <p class="byline">Everything you need for a story. Reply within one working day.</p>
+    <section class="answer" aria-label="In one paragraph">
+      <div class="hand">in one paragraph</div>
+      <p>Lidquid pays people to put a removable QR sticker for a brand they approve on the back of their laptop. Strangers in cafés, libraries and coworking spaces scan it out of curiosity, the brand pays per verified scan, and the laptop owner earns a share. There's no posting and no follower count. Lidquid is in pilot: 50 laptops, one city at a time, with cities opening in order of waitlist demand.</p>
+    </section>
+    <div class="prose">
+      <h2 id="facts">Key facts</h2>
+      <div class="table-wrap"><table>
+        <tbody>
+          <tr><td><b>What</b></td><td>A marketplace that rents laptop-lid ad space to brands, paid per verified QR scan</td></tr>
+          <tr><td><b>Who it's for</b></td><td>Students, remote workers and café regulars (owners); local businesses, apps and consumer brands (advertisers)</td></tr>
+          <tr><td><b>Status</b></td><td>Pre-launch pilot: 50 laptops, one city at a time. No earnings figures published yet.</td></tr>
+          <tr><td><b>Cost to owners</b></td><td>Free. Owners never pay Lidquid anything.</td></tr>
+          <tr><td><b>How owners are paid</b></td><td>Per verified scan, at a rate set by the brand and approved by the owner before the sticker ships</td></tr>
+          <tr><td><b>Verified scan</b></td><td>A real person on a real phone scanning a sticker for the first time; repeat-device scans, self-scans and bots are excluded</td></tr>
+          <tr><td><b>Sticker</b></td><td>Removable vinyl made for laptop lids; peels off without residue</td></tr>
+          <tr><td><b>Website</b></td><td><a href="/">lidquid.com</a></td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="angles">Story angles we can help with</h2>
+      <ul>
+        <li><b>The laptop as a billboard.</b> After Brand My Mac auctioned sticker spots on a MacBook in August 2026, Lidquid is trying the idea for people without an audience.</li>
+        <li><b>Car wraps, shrunk to a laptop.</b> What changes when the ad travels to cafés instead of highways, and how paying per verified scan differs from paying per mile.</li>
+        <li><b>Side-hustle scams.</b> How "get paid to advertise" offers get copied by fake-cheque scams, and the red flags (see our <a href="/guides/passive-income-scams">scams guide</a>).</li>
+        <li><b>Honest passive income.</b> Which "passive" ideas really are, and which are small jobs in disguise.</li>
+      </ul>
+
+      <h2 id="assets">Photos and logo</h2>
+      <p>Free to use in coverage of Lidquid. Credit: Lidquid.</p>
+      <ul>
+        <li><a href="/assets/sticker-in-the-wild.webp">Café scan photo</a> (920×1150, WebP)</li>
+        <li><a href="/assets/wild-cafe-scan.jpg">Sticker close-up being scanned</a> (920×920, JPG)</li>
+        <li><a href="/assets/og-card.jpg">Wide card</a> (1200×630, JPG)</li>
+        <li><a href="/favicon.svg">Logo mark</a> (SVG)</li>
+      </ul>
+
+      <h2 id="boilerplate">Boilerplate</h2>
+      <p class="callout">Lidquid rents the back of your laptop to brands you approve. Owners stick on a removable QR sticker, strangers scan it, and brands pay only for verified scans. It is free to join and is piloting one city at a time. Learn more at lidquid.com.</p>
+    </div>
+    <aside class="cta-card brand" id="join">
+      <div class="hand kick">interviews · data · pilot updates</div>
+      <h2>Press inquiries</h2>
+      <p>Tell us your outlet and deadline. We reply within one working day.</p>
+      <form class="brand-form" data-brand-form="press" data-lead="press" novalidate>
+        <input type="text" name="company" placeholder="Outlet" aria-label="Outlet" required>
+        <input type="email" name="email" placeholder="Your email" aria-label="Your email" autocomplete="email" inputmode="email" required>
+        <input type="text" name="city" placeholder="Story topic and deadline" aria-label="Story topic and deadline">
+        <button class="cta" type="submit">Send inquiry</button>
+        <div class="form-error" role="alert"></div>
+      </form>
+      <div class="brand-success" hidden><div class="hand">Got it 📰</div><p>We'll reply within one working day.</p></div>
+    </aside>
+  </article>
 </main>
 ${footer}
 </body>

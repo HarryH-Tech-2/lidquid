@@ -19,6 +19,11 @@ Instructions for the scheduled agent (Claude Code routine) that runs every morni
    - `pin.md`: title (≤100 chars, keyword-first, e.g. "get paid to put a sticker on your laptop"), description (≤500), alt text, board, link, image file.
    - `social.md`: X/Threads (≤240), Instagram (caption + 8–12 hashtags), LinkedIn (short, professional), and **one** Reddit idea: subreddit, post title, body written as a genuine answer, and a note to check that sub's self-promo rules first.
    - `reply-bank.md`: 3 short, genuinely helpful answers to questions people ask on Reddit/Quora about laptop stickers, side hustles in cafés, or QR marketing. Each ends with a soft link to the matching guide.
+   - `outreach.md`: **two** ready-to-send backlink pitches, following `marketing/backlinks.md` (templates A–C).
+     - Use WebSearch to find one *new* 2025–2026 roundup article ("unusual side hustles", "get paid to advertise", "passive income ideas", "car wrap side hustle") from a reputable outlet that doesn't mention Lidquid. Write a roundup-addition pitch for it.
+     - Search `#journorequest` / recent journalist requests (side hustles, passive income, students, scams, QR marketing) and draft one answer.
+     - For each pitch include: outlet, article URL, contact (only an address or contact-form URL the outlet itself publishes, with its source URL; write "not found" rather than guessing), subject line, body, and which guide to link.
+     - Never send anything. Skip any target already listed in earlier `outreach.md` files or in `marketing/backlinks.md`.
    - `digest.md`: angle used, guide linked, unused angles, and anything blocked.
 6. Commit with message `marketing: drafts for YYYY-MM-DD` and push `marketing-queue`.
 
