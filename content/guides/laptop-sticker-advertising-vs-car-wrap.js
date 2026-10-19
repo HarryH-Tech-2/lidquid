@@ -8,7 +8,7 @@ module.exports = {
   description: "Compare laptop stickers, car wraps, lid marketplaces, sticker auctions and branded clothing on cost, audience needed, how you're paid and scam risk.",
   published: "2026-10-16",
   about: ["get paid to advertise", "car wrap advertising", "laptop sticker advertising"],
-  related: ["is-laptop-sticker-advertising-legit", "get-paid-to-put-a-sticker-on-your-laptop", "how-much-can-you-earn-from-laptop-advertising"],
+  related: ["is-laptop-sticker-advertising-legit", "get-paid-to-put-a-sticker-on-your-laptop", "how-much-can-you-earn-from-laptop-advertising", "get-paid-to-advertise-on-your-phone-case"],
   answer: `
     <p><b>Laptop stickers are the lowest-effort, lowest-commitment way to get paid to advertise.</b> There's no upfront cost and no audience needed, and the sticker peels off whenever you like. Car wraps pay more per placement when they're real, but you need a car, a lot of driving and some caution, because the category is full of scams. Marketplaces and auctions favor people who already have a following.</p>`,
   body: `
