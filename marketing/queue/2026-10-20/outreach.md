@@ -3,11 +3,11 @@
 Blocked: WebFetch could not resolve outlet domains from this environment, so no article date, byline or contact page could be verified. Contacts below are "not found". Verify each before sending.
 
 ## 1. Roundup addition
-- **Outlet:** sidehustles.com
-- **Article:** https://sidehustles.com/get-paid-to-advertise-on-your-car/ (from search; 2025–2026 date and whether it mentions Lidquid NOT verified; check before sending. Not in backlinks.md.)
+- **Outlet:** Niche Pursuits
+- **Article:** https://www.nichepursuits.com/get-paid-to-advertise/ ("15 Ways to Get Paid to Advertise"; surfaced in a 2026 search; publish/update date and whether it mentions Lidquid NOT verified. Not in earlier outreach files or backlinks.md; sidehustles.com, Penny Hoarder and the MoneyLion/thinkmoney lists were skipped as already used/listed.)
 - **Contact:** not found
-- **Subject:** A laptop version of car-wrap advertising for your "get paid to advertise on your car" page
-- **Body:** Hi, your page covers getting paid to advertise on your car. A newer, lower-commitment version: Lidquid pays people to put a removable QR sticker on their laptop lid for a brand they approve, paid per verified scan. Free to join, no car or followers needed. It's a pilot (50 laptops, one city at a time) with no earnings data yet, so I'd only suggest it as an emerging option. Explainer you could link: https://www.lidquid.com/guides/laptop-sticker-advertising-vs-car-wrap?ref=li-20261020 — founder, Lidquid
+- **Subject:** A laptop version of car-wrap advertising for your "get paid to advertise" list
+- **Body:** Hi, your list covers ways to get paid to advertise. A newer, lower-commitment version: Lidquid pays people to put a removable QR sticker on their laptop lid for a brand they approve, paid per verified scan. Free to join, no car or followers needed. It's a pilot (50 laptops, one city at a time) with no earnings data yet, so I'd only suggest it as an emerging option. Explainer you could link: https://www.lidquid.com/guides/laptop-sticker-advertising-vs-car-wrap?ref=li-20261020 — founder, Lidquid
 - **Guide:** laptop-sticker-advertising-vs-car-wrap
 
 ## 2. Journalist request answer
