@@ -1,0 +1,5 @@
+# Reply bank 2026-10-20 (disclose you're the founder; check sub rules)
+
+1. **"Can you really get paid for stickers on a laptop?"** — Some programs do, but check the fine print: it should be free to join, you approve the brand, and pay should be tied to something countable. Ours (Lidquid, pilot stage) pays per verified scan, meaning a new real device. More: https://www.lidquid.com/guides/get-paid-to-put-a-sticker-on-your-laptop?ref=rd-20261020
+2. **"Is working from cafés for side income worth it?"** — Mostly worth it if the place has regulars and turnover, and you buy something so it stays welcome. Don't expect much from a quiet corner. More: https://www.lidquid.com/guides/make-money-working-from-cafes?ref=rd-20261020
+3. **"How do I know QR scan numbers aren't inflated?"** — Ask whether repeats, self-scans and bots are filtered, and whether you can see the rejected count. If a vendor only shows one big number, be wary. More: https://www.lidquid.com/guides/what-is-a-verified-scan?ref=rd-20261020
