@@ -10,4 +10,4 @@
 
 **Link:** https://www.lidquid.com/guides/make-money-working-from-cafes?ref=pin-20261022
 
-**Image:** assets/wild-cafe-scan.jpg (not used in the last 7 days; no previous queue exists on main to check against)
+**Image:** assets/wild-ad-space.jpg (wild-cafe-scan.jpg was used 10-17)
