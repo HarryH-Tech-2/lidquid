@@ -3,7 +3,7 @@
 The Monday routine takes the top unchecked item. Each one is a question people actually search or ask AI assistants. Reorder freely; GSC queries should drive this once impressions build up.
 
 - [ ] `get-paid-to-advertise-on-your-phone-case` (owner): can you get paid to advertise on your phone case, water bottle or backpack?
-- [ ] `laptop-skins-vs-stickers` (owner): laptop skins vs stickers: which is better for your laptop?
+- [x] `laptop-skins-vs-stickers` (owner): laptop skins vs stickers: which is better for your laptop?, done 2026-10-26
 - [ ] `how-qr-codes-work` (owner/brand): how do QR codes work, and are they safe to scan?
 - [ ] `coffee-shop-marketing-ideas` (brand): cheap marketing ideas for coffee shops and cafés
 - [ ] `how-to-advertise-to-remote-workers` (brand): how to reach remote workers and freelancers offline
