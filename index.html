@@ -408,26 +408,29 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    width: 64px; height: 64px;
+    width: 58px; height: 58px;
+    padding: 0;
     border-radius: 50%;
-    border: 3px solid var(--ink);
-    background: var(--sun);
+    border: 2.5px solid var(--ink);
+    background: #fffdf8;
     color: var(--ink);
-    font-family: inherit;
-    font-size: 28px;
-    font-weight: 900;
     display: grid; place-items: center;
     cursor: pointer;
-    box-shadow: 3px 3px 0 #1c1a1750;
-    transition: transform .15s cubic-bezier(.34,1.56,.64,1);
+    box-shadow: 3px 4px 0 var(--ink);   /* hard sticker shadow, same language as the slides */
+    transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s ease, background-color .15s ease;
   }
-  .car-btn:hover { transform: translateY(-50%) scale(1.12); }
-  .car-btn:active { transform: translateY(-50%) scale(.95); }
+  .car-btn svg { width: 24px; height: 24px; transition: transform .18s cubic-bezier(.34,1.56,.64,1); }
+  .car-btn:hover { background: var(--sun); transform: translateY(calc(-50% - 2px)); box-shadow: 4px 6px 0 var(--ink); }
+  .car-btn.prev:hover svg { transform: translateX(-2px); }
+  .car-btn.next:hover svg { transform: translateX(2px); }
+  .car-btn:active { transform: translateY(calc(-50% + 2px)); box-shadow: 1px 1px 0 var(--ink); }
+  .car-btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
   .car-btn.prev { left: 18px; }
   .car-btn.next { right: 18px; }
   @media (max-width: 560px) {
     .carousel { padding: 0 28px; }
-    .car-btn { width: 48px; height: 48px; font-size: 22px; }
+    .car-btn { width: 44px; height: 44px; box-shadow: 2px 3px 0 var(--ink); }
+    .car-btn svg { width: 19px; height: 19px; }
     .car-btn.prev { left: 8px; }
     .car-btn.next { right: 8px; }
   }
@@ -935,8 +938,8 @@ pintrk('track', 'pagevisit', {
 
     <div class="wild rise d5">
       <div class="carousel">
-        <button class="car-btn prev" id="carPrev" aria-label="Previous image">←</button>
-        <button class="car-btn next" id="carNext" aria-label="Next image">→</button>
+        <button class="car-btn prev" id="carPrev" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="car-btn next" id="carNext" aria-label="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         <div class="car-track" id="carTrack" aria-label="Lidquid in the wild — image carousel">
           <div class="car-slide">
             <img src="assets/wild-cafe-scan.jpg?v=sm1" alt="A Lidquid sticker on the back of a laptop in a café — a stranger scanning its QR code with their phone." loading="lazy" decoding="async" width="880" height="880">
