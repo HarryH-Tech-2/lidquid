@@ -339,8 +339,8 @@
   .carousel {
     position: relative;
     left: 50%;
-    margin-left: -50vw;   /* full-bleed: the strip spans the whole viewport */
-    width: 100vw;
+    margin-left: calc(-1 * min(50vw, 800px));   /* full-bleed up to 1600px, so wide screens never show a slide twice */
+    width: min(100vw, 1600px);
     padding: 0 56px;      /* side breathing room so the arrows never sit on the edge */
     box-sizing: border-box;
   }
@@ -947,6 +947,15 @@ pintrk('track', 'pagevisit', {
           <div class="car-slide">
             <img src="assets/wild-ad-space.jpg?v=sm1" alt="Poster reading 'your lid is ad space' with the Lidquid QR sticker on a laptop lid and lidquid.com." loading="lazy" decoding="async" width="880" height="880">
           </div>
+          <div class="car-slide portrait">
+            <img src="assets/wild-scan-it-get-paid.jpg?v=sm1" alt="Scan it, I get paid — a café regular points at the Lidquid QR sticker on his laptop while a stranger scans it." loading="lazy" decoding="async" width="590" height="880">
+          </div>
+          <div class="car-slide">
+            <img src="assets/wild-paid-to-sit.jpg?v=sm1" alt="Get paid to sit in cafés — a woman scans the Lidquid QR sticker on a man's laptop at a café table." loading="lazy" decoding="async" width="880" height="880">
+          </div>
+          <div class="car-slide portrait">
+            <img src="assets/wild-beanie-scan.jpg?v=sm1" alt="A woman in a yellow beanie scans the Lidquid QR sticker on a laptop lid in a sunny café." loading="lazy" decoding="async" width="709" height="880">
+          </div>
         </div>
       </div>
       <div class="car-dots" id="carDots"></div>
@@ -1136,7 +1145,10 @@ pintrk('track', 'pagevisit', {
   const carCaptions = [
     "↑ spotted in the wild — a café regular earning while they sip ☕",
     "↑ this is how I earn coffee money ☕",
-    "↑ the whole idea, one poster"
+    "↑ the whole idea, one poster",
+    "↑ scan it, I get paid ✌️",
+    "↑ get paid to sit in cafés",
+    "↑ curiosity does the work 👀"
   ];
   const slideCount = carTrack.children.length;
 
