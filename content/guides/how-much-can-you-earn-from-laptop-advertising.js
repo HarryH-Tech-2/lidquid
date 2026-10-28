@@ -6,7 +6,7 @@ module.exports = {
   title: "How Much Can You Earn From Laptop Advertising? (2026)",
   h1: "How much can you earn from laptop advertising?",
   description: "The earnings formula for laptop sticker ads, worked examples from $2 to $170+ a month, what drives scans, and how to handle the income at tax time.",
-  image: {"src":"/assets/wild-cafe-scan.jpg","w":920,"h":920,"alt":"A phone scanning a Lidquid QR sticker on a laptop lid in a café.","caption":"café days are scan days"},
+  image: {"src":"/assets/wild-cafe-scan.jpg","w":880,"h":880,"alt":"A phone scanning a Lidquid QR sticker on a laptop lid in a café.","caption":"café days are scan days"},
   published: "2026-10-16",
   about: ["laptop sticker advertising", "side hustle earnings", "passive income"],
   related: ["get-paid-to-put-a-sticker-on-your-laptop", "what-is-a-verified-scan", "make-money-working-from-cafes", "passive-income-vs-side-hustle"],

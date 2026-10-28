@@ -351,24 +351,24 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 8px calc(50% - 400px);
+    padding: 8px calc(50% - 220px);
     -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
     mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
   }
   .car-track::-webkit-scrollbar { display: none; }
   .car-slide {
-    flex: 0 0 800px;
-    width: 800px;
-    height: 800px;
+    flex: 0 0 440px;
+    width: 440px;
+    height: 440px;
     scroll-snap-align: center;
     scroll-snap-stop: always;
   }
-  .car-slide.portrait, .car-slide.portrait img { width: 536px; }
-  .car-slide.portrait { flex-basis: 536px; }
+  .car-slide.portrait, .car-slide.portrait img { width: 295px; }
+  .car-slide.portrait { flex-basis: 295px; }
   .car-slide img {
     display: block;
-    width: 800px;
-    height: 800px;
+    width: 440px;
+    height: 440px;
     object-fit: cover;
     background: #fffdf8;
     border: 3px solid var(--ink);
@@ -376,32 +376,32 @@
     box-shadow: 5px 6px 0 #1c1a1730;
   }
   @media (max-width: 980px) {
-    .car-track { padding: 8px calc(50% - 310px); }
-    .car-slide, .car-slide img { width: 620px; height: 620px; }
-    .car-slide { flex: 0 0 620px; }
-    .car-slide.portrait, .car-slide.portrait img { width: 416px; }
-    .car-slide.portrait { flex-basis: 416px; }
+    .car-track { padding: 8px calc(50% - 200px); }
+    .car-slide, .car-slide img { width: 400px; height: 400px; }
+    .car-slide { flex: 0 0 400px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 268px; }
+    .car-slide.portrait { flex-basis: 268px; }
   }
   @media (max-width: 760px) {
-    .car-track { padding: 8px calc(50% - 230px); }
-    .car-slide, .car-slide img { width: 460px; height: 460px; }
-    .car-slide { flex: 0 0 460px; }
-    .car-slide.portrait, .car-slide.portrait img { width: 308px; }
-    .car-slide.portrait { flex-basis: 308px; }
+    .car-track { padding: 8px calc(50% - 180px); }
+    .car-slide, .car-slide img { width: 360px; height: 360px; }
+    .car-slide { flex: 0 0 360px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 241px; }
+    .car-slide.portrait { flex-basis: 241px; }
   }
   @media (max-width: 560px) {
-    .car-track { padding: 8px calc(50% - 165px); }
-    .car-slide, .car-slide img { width: 330px; height: 330px; }
-    .car-slide { flex: 0 0 330px; }
-    .car-slide.portrait, .car-slide.portrait img { width: 221px; }
-    .car-slide.portrait { flex-basis: 221px; }
+    .car-track { padding: 8px calc(50% - 150px); }
+    .car-slide, .car-slide img { width: 300px; height: 300px; }
+    .car-slide { flex: 0 0 300px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 201px; }
+    .car-slide.portrait { flex-basis: 201px; }
   }
   @media (max-width: 400px) {
-    .car-track { padding: 8px calc(50% - 130px); }
-    .car-slide, .car-slide img { width: 260px; height: 260px; }
-    .car-slide { flex: 0 0 260px; }
-    .car-slide.portrait, .car-slide.portrait img { width: 174px; }
-    .car-slide.portrait { flex-basis: 174px; }
+    .car-track { padding: 8px calc(50% - 120px); }
+    .car-slide, .car-slide img { width: 240px; height: 240px; }
+    .car-slide { flex: 0 0 240px; }
+    .car-slide.portrait, .car-slide.portrait img { width: 161px; }
+    .car-slide.portrait { flex-basis: 161px; }
   }
   .car-btn {
     position: absolute;
@@ -939,13 +939,13 @@ pintrk('track', 'pagevisit', {
         <button class="car-btn next" id="carNext" aria-label="Next image">→</button>
         <div class="car-track" id="carTrack" aria-label="Lidquid in the wild — image carousel">
           <div class="car-slide">
-            <img src="assets/wild-cafe-scan.jpg?v=sq2" alt="A Lidquid sticker on the back of a laptop in a café — a stranger scanning its QR code with their phone." loading="lazy" decoding="async" width="920" height="920">
+            <img src="assets/wild-cafe-scan.jpg?v=sm1" alt="A Lidquid sticker on the back of a laptop in a café — a stranger scanning its QR code with their phone." loading="lazy" decoding="async" width="880" height="880">
           </div>
           <div class="car-slide portrait">
-            <img src="assets/wild-coffee-money.jpg?v=sq3" alt="This is how I earn coffee money — a phone scanning the Lidquid QR sticker on a laptop lid in a café." loading="lazy" decoding="async" width="1073" height="1600">
+            <img src="assets/wild-coffee-money.jpg?v=sm1" alt="This is how I earn coffee money — a phone scanning the Lidquid QR sticker on a laptop lid in a café." loading="lazy" decoding="async" width="590" height="880">
           </div>
           <div class="car-slide">
-            <img src="assets/wild-ad-space.jpg?v=sq3" alt="Poster reading 'your lid is ad space' with the Lidquid QR sticker on a laptop lid and lidquid.com." loading="lazy" decoding="async" width="1600" height="1600">
+            <img src="assets/wild-ad-space.jpg?v=sm1" alt="Poster reading 'your lid is ad space' with the Lidquid QR sticker on a laptop lid and lidquid.com." loading="lazy" decoding="async" width="880" height="880">
           </div>
         </div>
       </div>

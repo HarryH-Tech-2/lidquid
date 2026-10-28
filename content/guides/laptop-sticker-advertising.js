@@ -6,7 +6,7 @@ module.exports = {
   title: "Laptop Sticker Advertising: How Brands Buy Lid Ad Space",
   h1: "Laptop sticker advertising: how brands buy laptop lid ad space",
   description: "How laptop sticker advertising works for brands: who it reaches, how a pilot campaign runs, paying per verified scan, creative tips and honest limits.",
-  image: {"src":"/assets/wild-ad-space.jpg","w":1600,"h":1600,"alt":"Poster reading \"your lid is ad space\" showing a Lidquid QR sticker on a laptop lid.","caption":"the lid faces the room all day"},
+  image: {"src":"/assets/wild-ad-space.jpg","w":880,"h":880,"alt":"Poster reading \"your lid is ad space\" showing a Lidquid QR sticker on a laptop lid.","caption":"the lid faces the room all day"},
   published: "2026-10-16",
   about: ["laptop sticker advertising", "out-of-home advertising", "QR code advertising"],
   related: ["cost-per-scan-advertising", "qr-code-sticker-marketing-for-local-businesses", "campus-advertising-to-reach-students"],

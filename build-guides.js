@@ -381,7 +381,7 @@ ${topbar}
       <p>Free to use in coverage of Lidquid. Credit: Lidquid.</p>
       <ul>
         <li><a href="/assets/sticker-in-the-wild.webp">Café scan photo</a> (920×1150, WebP)</li>
-        <li><a href="/assets/wild-cafe-scan.jpg">Sticker close-up being scanned</a> (920×920, JPG)</li>
+        <li><a href="/assets/wild-cafe-scan.jpg">Sticker close-up being scanned</a> (880×880, JPG)</li>
         <li><a href="/assets/og-card.jpg">Wide card</a> (1200×630, JPG)</li>
         <li><a href="/favicon.svg">Logo mark</a> (SVG)</li>
       </ul>
