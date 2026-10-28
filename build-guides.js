@@ -10,6 +10,19 @@ const root = __dirname;
 const site = "https://www.lidquid.com";
 const VARIANT = "guides-2026-10";
 const contentDir = path.join(root, "content", "guides");
+// Brand entity signals for search and AI engines. Fill these in as they come to exist:
+// SAME_AS = Lidquid's own social/directory profile URLs; AUTHOR = { name, jobTitle, url } to credit a named person.
+const SAME_AS = [];
+const AUTHOR = null;
+const org = {
+  "@type": "Organization",
+  "@id": `${site}/#org`,
+  name: "Lidquid",
+  url: site + "/",
+  logo: { "@type": "ImageObject", url: `${site}/favicon.svg` },
+  description: "Lidquid rents the back of your laptop to brands. Strangers scan the QR sticker, brands pay for verified attention, and laptop owners earn per verified scan.",
+  ...(SAME_AS.length ? { sameAs: SAME_AS } : {})
+};
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const strip = html => String(html).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
@@ -174,6 +187,7 @@ function guidePage(g) {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      org,
       {
         "@type": "Article",
         "@id": url + "#article",
@@ -182,8 +196,8 @@ function guidePage(g) {
         datePublished: g.published,
         dateModified: updated,
         image: g.image ? [`${site}${g.image.src}`, `${site}/assets/og-card.jpg`] : `${site}/assets/og-card.jpg`,
-        author: { "@type": "Organization", "@id": `${site}/#org`, name: "Lidquid", url: site + "/" },
-        publisher: { "@type": "Organization", "@id": `${site}/#org`, name: "Lidquid", logo: { "@type": "ImageObject", url: `${site}/favicon.svg` } },
+        author: AUTHOR ? { "@type": "Person", ...AUTHOR, worksFor: { "@id": org["@id"] } } : { "@id": org["@id"] },
+        publisher: { "@id": org["@id"] },
         mainEntityOfPage: url,
         wordCount: words(g.answer + g.body),
         about: g.about || undefined
