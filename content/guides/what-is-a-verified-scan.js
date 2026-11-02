@@ -8,7 +8,7 @@ module.exports = {
   description: "A verified scan is a real person on a real phone scanning a sticker for the first time. What gets filtered out, and why it protects owners and brands.",
   published: "2026-10-16",
   about: ["verified scan", "QR code tracking", "ad fraud prevention"],
-  related: ["get-paid-to-put-a-sticker-on-your-laptop", "how-much-can-you-earn-from-laptop-advertising", "cost-per-scan-advertising"],
+  related: ["get-paid-to-put-a-sticker-on-your-laptop", "how-much-can-you-earn-from-laptop-advertising", "cost-per-scan-advertising", "how-qr-codes-work"],
   answer: `
     <p>A <b>verified scan</b> is a real person, on a real phone, scanning a Lidquid sticker for the first time. It's the only kind of scan that earns money for the laptop owner and gets billed to the brand.</p>
     <ul>

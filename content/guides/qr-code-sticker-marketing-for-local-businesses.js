@@ -8,7 +8,7 @@ module.exports = {
   description: "A practical QR sticker marketing playbook: dynamic vs static codes, placement, offers, landing pages, measurement, printing, and where laptop lids fit.",
   published: "2026-10-16",
   about: ["QR code marketing", "sticker marketing", "local business marketing"],
-  related: ["cost-per-scan-advertising", "laptop-sticker-advertising", "campus-advertising-to-reach-students"],
+  related: ["cost-per-scan-advertising", "laptop-sticker-advertising", "campus-advertising-to-reach-students", "how-qr-codes-work"],
   answer: `
     <p><b>QR sticker marketing works when four things line up:</b> a dynamic QR code you can track, a placement where people have time to look, an offer worth pulling out a phone for, and a fast mobile page that delivers it. Get those right and every scan becomes a measurable customer touchpoint.</p>
     <ul>
