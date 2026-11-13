@@ -2,13 +2,13 @@
 Nothing sent. Both blocked from full completion, see notes.
 
 ## 1. Roundup addition (template B)
-- **Outlet:** sidehustles.com
-- **Article:** "3 Ways to Get Paid to Advertise on Your Car in 2026" https://sidehustles.com/get-paid-to-advertise-on-your-car/ (found via search; also check https://sidehustles.com/idea/rent-ad-space-on-car/)
-- **Contact:** not found. sidehustles.com did not resolve from this session (network-blocked), so the contact page and author byline could not be checked. Look for the site's own contact page by hand before sending.
+- **Outlet:** logicaldollar.com
+- **Article:** "25 Brilliant Ways to Get Paid to Advertise and Make Real Money (2026)" https://logicaldollar.com/get-paid-to-advertise/ (found via search; not in earlier outreach.md files or backlinks.md; it lists car wraps, lock-screen apps and wearable ads)
+- **Contact:** not found. logicaldollar.com did not resolve from this session (network-blocked; it must be allowed in the session's network settings to fetch), so the contact page and author byline could not be checked. Look for the site's own contact page by hand before sending.
 - **Unverified:** that the article doesn't already mention Lidquid (very unlikely, but fetch failed).
-- **Subject:** A laptop version of car-wrap advertising for your "Get Paid to Advertise on Your Car" guide
+- **Subject:** A laptop version of car-wrap advertising for your "25 Ways to Get Paid to Advertise" list
 - **Body:**
-Hi [name], your guide covers getting paid to advertise on your car. A newer, lower-commitment version: Lidquid pays people to put a removable QR sticker on their laptop lid for a brand they approve, paid per verified scan. It's free to join and needs no car, mileage or followers. It's an honest pilot (50 laptops, opening city by city), with no earnings published yet. If useful, here's an explainer you could link: https://www.lidquid.com/guides/laptop-sticker-advertising-vs-car-wrap?ref=out-20261113
+Hi [name], your list covers ways to get paid to advertise, including on your car. A newer, lower-commitment version: Lidquid pays people to put a removable QR sticker on their laptop lid for a brand they approve, paid per verified scan. It's free to join and needs no car, mileage or followers. It's an honest pilot (50 laptops, opening city by city), with no earnings published yet. If useful, here's an explainer you could link: https://www.lidquid.com/guides/laptop-sticker-advertising-vs-car-wrap?ref=out-20261113
 [name], founder, Lidquid
 - **Guide:** laptop-sticker-advertising-vs-car-wrap
 

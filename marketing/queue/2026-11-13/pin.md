@@ -6,4 +6,4 @@
 **Alt text:** A phone scanning a removable QR sticker on a laptop lid in a café.
 **Board:** Side Hustles / Passive Income Ideas
 **Link:** https://www.lidquid.com/guides/how-much-can-you-earn-from-laptop-advertising?ref=pin-20261113
-**Image:** `assets/wild-cafe-scan.jpg` (the marketing/ "Ready To Post" files are not in the repo; this is the nearest in-repo photo, 880x880, no text overlay)
+**Image:** `assets/wild-paid-to-sit.jpg` (last used 11-06; the marketing/ "Ready To Post" files are not in the repo)
