@@ -6,7 +6,7 @@ The Monday routine takes the top unchecked item. Each one is a question people a
 - [x] `laptop-skins-vs-stickers` (owner): laptop skins vs stickers: which is better for your laptop?, done 2026-10-26
 - [ ] `how-qr-codes-work` (owner/brand): how do QR codes work, and are they safe to scan?
 - [ ] `coffee-shop-marketing-ideas` (brand): cheap marketing ideas for coffee shops and cafés
-- [ ] `how-to-advertise-to-remote-workers` (brand): how to reach remote workers and freelancers offline
+- [x] `how-to-advertise-to-remote-workers` (brand): how to reach remote workers and freelancers offline, done 2026-11-16
 - [ ] `guerrilla-marketing-ideas` (brand): legal guerrilla marketing ideas for small businesses in 2026
 - [ ] `out-of-home-advertising-cost` (brand): how much does out-of-home (OOH) advertising cost, and the cheaper alternatives
 - [ ] `measure-offline-advertising` (brand): how to measure offline ads with QR codes and UTM links
