@@ -9,7 +9,7 @@ module.exports = {
   image: {"src":"/assets/wild-ad-space.jpg","w":880,"h":880,"alt":"Poster reading \"your lid is ad space\" showing a Lidquid QR sticker on a laptop lid.","caption":"the lid faces the room all day"},
   published: "2026-10-16",
   about: ["laptop sticker advertising", "out-of-home advertising", "QR code advertising"],
-  related: ["cost-per-scan-advertising", "qr-code-sticker-marketing-for-local-businesses", "campus-advertising-to-reach-students"],
+  related: ["cost-per-scan-advertising", "qr-code-sticker-marketing-for-local-businesses", "campus-advertising-to-reach-students", "how-to-advertise-to-remote-workers"],
   answer: `
     <p><b>Laptop sticker advertising puts your brand's QR sticker on the back of real people's laptops</b>, in the cafés, libraries, campuses and coworking spaces where your audience already sits. With Lidquid, owners opt in and approve your brand, and you pay only for verified scans, not impressions.</p>
     <ul>
